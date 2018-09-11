@@ -109,32 +109,20 @@ $(document).ready(function(){
 
 // ==========  START GOOGLE MAP ========== //
 function initialize() {
-    var myLatLng = new google.maps.LatLng(51.892364, -8.490118);
+    var lat = 51.892364;
+    var lon = -8.490118;
+    // initialize map
+    map = L.map('map_canvas').setView([lat, lon], 13);
+    // set map tiles source
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      maxZoom: 18,
+    }).addTo(map);
+    L.marker([lat, lon]).addTo(map).bindPopup("<b>UCC Common Room</b><br/>").openPopup();
 
-    var mapOptions = {
-        zoom: 14,
-        center: myLatLng,
-        disableDefaultUI: true,
-        scrollwheel: false,
-        navigationControl: false,
-        mapTypeControl: false,
-        scaleControl: false,
-        draggable: false,
-        mapTypeControlOptions: {
-            mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'roadatlas']
-        }
-    };
-
-    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
-
-    new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: 'img/location-icon.png',
-        title: '',
-    });
+    lat = 51.893147
+    lon = -8.500317
+    L.marker([lat, lon]).addTo(map).bindPopup("<b>Western Gateway Building</b><br/>");
 }
 
-google.maps.event.addDomListener(window, "load", initialize);
-// ========== END GOOGLE MAP ========== //
+$(document).ready(initialize)
