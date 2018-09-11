@@ -21,6 +21,10 @@ figure, p {
     margin: 0;
 }
 
+.team-member {
+  margin-bottom: 2em;
+}
+
 a {
     color: #fff;
 	
@@ -141,7 +145,7 @@ body > section,
 ==========================================*/
 
 #navigation {
-  background-color: rgba(16, 22, 54, 0.2);
+  background-color: rgba(16, 22, 54, 0.5);
   border: 0 none;
   margin: 0;
   
@@ -497,8 +501,7 @@ top: -8px;
 ==========================================*/
 
 #facts {
-	background-image: url("../img/banner.jpg");
-	background-color: rgba(6,32,51,.8);
+	background-color: rgba(6,32,51,.5);
 	background-attachment: fixed !important;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -516,7 +519,7 @@ top: -8px;
 }
 
 .parallax-overlay {
-	background-color: rgba(6,32,51,.8);
+	background-color: rgba(6,32,51,.5);
 	padding: 70px 0;
 }
 
