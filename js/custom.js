@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 	jQuery('#nav').singlePageNav({
 		offset: jQuery('#nav').outerHeight(),
-		//filter: ':not(.external)',
+		filter: ':not(.external)',
 		speed: 1200,
 		currentClass: 'current',
 		easing: 'easeInOutExpo',
