@@ -145,7 +145,7 @@ body > section,
 ==========================================*/
 
 #navigation {
-  background-color: rgba(16, 22, 54, 0.5);
+  background-color: rgba(48, 49, 56, 0.85);
   border: 0 none;
   margin: 0;
   
@@ -627,7 +627,7 @@ label.error {
 }
 
 .footer-social {
-  margin-top: 17px;
+  margin-top: 17px;;
 }
 
 .footer-social li a {
@@ -641,6 +641,11 @@ label.error {
   width: 100%;
 }
 
+#footer .row:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 
 /*=========================================
