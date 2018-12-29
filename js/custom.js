@@ -107,7 +107,7 @@ $(document).ready(function(){
 });
 
 
-// ==========  START GOOGLE MAP ========== //
+// ==========  START MAP ========== //
 function initialize() {
     var lat = 51.892364;
     var lon = -8.490118;
