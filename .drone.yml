@@ -4,7 +4,8 @@ name: default
 volumes:
 - name: cache
   temp: {}
-  
+
+steps:
 - name: build_prod
   image: plugins/docker
   settings:
