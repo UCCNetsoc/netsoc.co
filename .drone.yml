@@ -1,0 +1,58 @@
+- name: build_prod
+  image: plugins/docker
+  settings:
+    tag: latest
+    repo: docker.netsoc.co/netsoc/netsoc.co
+    registry: docker.netsoc.co
+    username:
+      from_secret: docker_prod_username
+    password:
+      from_secret: docker_prod_auth
+  volumes:
+  - name: cache
+    path: /var/lib/docker  
+  when:
+    event: 
+      - push
+    branch: 
+      - master   
+
+- name: discord_notif_success
+  image: appleboy/drone-discord
+  environment:
+    WEBHOOK_ID:
+      from_secret: discord_webhook_id
+    WEBHOOK_TOKEN:
+      from_secret: discord_webhook_token
+  settings:
+    username: Netsoc CI
+    avatar_url: https://raw.githubusercontent.com/drone/brand/3051b0d85318a2a20b62927ba19fc07e24c0d751/logos/png/white/drone-logo-png-white-256.png
+    color: "#42f483"
+    message: Netsoc.co successfully built and pushed. Build num {{build.number}}. {{build.link}}
+  when:
+    event: 
+      - push
+    branch: 
+      - master 
+    status:
+      - success
+
+- name: discord_notif_failure
+  image: appleboy/drone-discord
+  environment:
+    WEBHOOK_ID:
+      from_secret: discord_webhook_id
+    WEBHOOK_TOKEN:
+      from_secret: discord_webhook_token
+  settings:
+    username: Netsoc CI
+    avatar_url: https://raw.githubusercontent.com/drone/brand/3051b0d85318a2a20b62927ba19fc07e24c0d751/logos/png/white/drone-logo-png-white-256.png
+    color: "#e04414"
+    message: Netsoc.co failed for {{build.author}}. Build num {{build.number}}. {{build.link}}
+  when:
+    event: 
+      - push
+    branch: 
+      - master 
+    status:
+      - failure  
