@@ -1,3 +1,10 @@
+kind: pipeline
+name: default
+
+volumes:
+- name: cache
+  temp: {}
+  
 - name: build_prod
   image: plugins/docker
   settings:
