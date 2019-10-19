@@ -6,16 +6,16 @@ volumes:
   temp: {}
 
 steps:
-- name: build_prod
+- name: build
   image: plugins/docker
   settings:
     tag: latest
-    repo: docker.netsoc.co/netsoc/netsoc.co
+    repo: docker.netsoc.co/public/netsoc.co
     registry: docker.netsoc.co
     username:
-      from_secret: docker_prod_username
+      from_secret: docker_dev_username
     password:
-      from_secret: docker_prod_auth
+      from_secret: docker_dev_auth
   volumes:
   - name: cache
     path: /var/lib/docker  
