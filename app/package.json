@@ -1,0 +1,22 @@
+{
+  "name": "netsoc.co",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UCCNetsoc/netsoc.co.git"
+  },
+  "author": "Eric Moynihan <git@moynihan.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UCCNetsoc/netsoc.co/issues"
+  },
+  "homepage": "https://github.com/UCCNetsoc/netsoc.co#readme",
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
+}
