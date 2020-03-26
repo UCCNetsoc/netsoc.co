@@ -6,9 +6,10 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
-[*.{html,js,jsx,ts,tsx,py}]
+[*.{html,js,jsx,ts,tsx,py,json}]
 charset = utf-8
 
-[*.{html,js,jsx,ts,tsx}]
+[*.{html,js,jsx,ts,tsx,json}]
 indent_style = space
 indent_size = 2
+
