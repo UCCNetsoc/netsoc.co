@@ -14,43 +14,18 @@ steps:
       - latest
     repo: docker.netsoc.co/public/netsoc.co
     registry: docker.netsoc.co
-    usernamekind: secret
-    name: discord_webhook_id
-    get:
-      path: discord/sysadmins_webhook
-      name: discord_webhook_id
-    
----
-kind: secret
-name: discord_webhook_token
-get:
-  path: discord/sysadmins_webhook
-  name: discord_webhook_token 
-
----
-kind: secret
-name: registry_pub_user
-get:
-  path: docker_registry/harbor
-  name: harbor_pub_user
-
----
-kind: secret
-name: registry_pub_token
-get:
-  path: docker_registry/harbor
-  name: harbor_pub_token:
-  from_secret: docker_dev_username
-password:
-  from_secret: docker_dev_auth
-volumes:
-- name: cache
-path: /var/lib/docker
-when:
-event:
-  - push
-branch:
-  - new_website
+    username:
+      from_secret: docker_dev_username
+    password:
+      from_secret: docker_dev_auth
+  volumes:
+  - name: cache
+    path: /var/lib/docker
+  when:
+    event:
+      - push
+    branch:
+      - new_website
 
 - name: discord_notif_success
   image: appleboy/drone-discord
@@ -63,7 +38,7 @@ branch:
     username: Netsoc CI
     avatar_url: https://raw.githubusercontent.com/drone/brand/3051b0d85318a2a20b62927ba19fc07e24c0d751/logos/png/white/drone-logo-png-white-256.png
     color: "#42f483"
-    message: Netsoc.co new_website successfully built and pushed. Build num {{build.number}}. {{build.link}}
+    message: netsoc.co new_website successfully built and pushed. Build num {{build.number}}. {{build.link}}
   when:
     event:
       - push
@@ -82,7 +57,7 @@ branch:
     username: Netsoc CI
     avatar_url: https://raw.githubusercontent.com/drone/brand/3051b0d85318a2a20b62927ba19fc07e24c0d751/logos/png/white/drone-logo-png-white-256.png
     color: "#e04414"
-    message: Netsoc.co failed for {{build.author}}. Build num {{build.number}}. {{build.link}}
+    message: netsoc.co failed for {{build.author}}. Build num {{build.number}}. {{build.link}}
   when:
     event: 
       - push
