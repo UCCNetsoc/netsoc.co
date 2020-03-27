@@ -11,9 +11,9 @@ steps:
     repo: docker.netsoc.co/public/netsoc.co
     registry: docker.netsoc.co
     username:
-      from_secret: docker_dev_username
+      from_secret: docker_pub_user
     password:
-      from_secret: docker_dev_auth
+      from_secret: docker_pub_token
   when:
     event: 
       - push
