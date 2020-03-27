@@ -44,3 +44,22 @@ steps:
       - new_website
     status:
       - success
+- name: discord_notif_failure
+  image: appleboy/drone-discord
+  environment:
+    WEBHOOK_ID:
+      from_secret: discord_webhook_id
+    WEBHOOK_TOKEN:
+      from_secret: discord_webhook_token
+  settings:
+    username: Netsoc CI
+    avatar_url: https://raw.githubusercontent.com/drone/brand/3051b0d85318a2a20b62927ba19fc07e24c0d751/logos/png/white/drone-logo-png-white-256.png
+    color: "#e04414"
+    message: Netsoc.co failed for {{build.author}}. Build num {{build.number}}. {{build.link}}
+  when:
+    event: 
+      - push
+    branch: 
+      - master 
+    status:
+      - failure  
