@@ -1,7 +1,7 @@
 import * as React from "react";
 
-export interface RootProps {}
+export interface RootProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export default function(props: RootProps): React.ReactElement<RootProps> {
-  return <div></div>;
+  return <div {...props}></div>;
 }
