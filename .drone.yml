@@ -9,10 +9,37 @@ steps:
 - name: build
   image: plugins/docker
   settings:
-    tag: latest
-    repo: docker.netsoc.co/public/netsoc.co_new
+    tags:
+      - "$(DRONE_COMMIT_SHA:0:7)"
+      - latest
+    repo: docker.netsoc.co/public/netsoc.co
     registry: docker.netsoc.co
-    username:
+    usernamekind: secret
+    name: discord_webhook_id
+    get:
+      path: discord/sysadmins_webhook
+      name: discord_webhook_id
+    
+    ---
+    kind: secret
+    name: discord_webhook_token
+    get:
+      path: discord/sysadmins_webhook
+      name: discord_webhook_token 
+    
+    ---
+    kind: secret
+    name: registry_pub_user
+    get:
+      path: docker_registry/harbor
+      name: harbor_pub_user
+    
+    ---
+    kind: secret
+    name: registry_pub_token
+    get:
+      path: docker_registry/harbor
+      name: harbor_pub_token:
       from_secret: docker_dev_username
     password:
       from_secret: docker_dev_auth
