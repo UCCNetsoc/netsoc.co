@@ -63,3 +63,31 @@ steps:
       - master 
     status:
       - failure  
+
+---
+kind: secret
+name: discord_webhook_id
+get:
+  path: discord/sysadmins_webhook
+  name: discord_webhook_id
+
+---
+kind: secret
+name: discord_webhook_token
+get:
+  path: discord/sysadmins_webhook
+  name: discord_webhook_token 
+
+---
+kind: secret
+name: registry_pub_user
+get:
+  path: docker_registry/harbor
+  name: harbor_pub_user
+
+---
+kind: secret
+name: registry_pub_token
+get:
+  path: docker_registry/harbor
+  name: harbor_pub_token
