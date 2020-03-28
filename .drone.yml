@@ -6,8 +6,8 @@ steps:
     image: plugins/docker
     settings:
       tags:
-        - "$(DRONE_COMMIT_SHA:0:7)"
-        - latest
+        - '$(DRONE_COMMIT_SHA:0:7)'
+        - new
       repo: docker.netsoc.co/public/netsoc.co
       registry: docker.netsoc.co
       username:
@@ -30,7 +30,7 @@ steps:
     settings:
       username: Netsoc CI
       avatar_url: https://raw.githubusercontent.com/drone/brand/3051b0d85318a2a20b62927ba19fc07e24c0d751/logos/png/white/drone-logo-png-white-256.png
-      color: "#42f483"
+      color: '#42f483'
       message: netsoc.co new_website successfully built and pushed. Build num {{build.number}}. {{build.link}}
     when:
       event:
@@ -49,13 +49,13 @@ steps:
     settings:
       username: Netsoc CI
       avatar_url: https://raw.githubusercontent.com/drone/brand/3051b0d85318a2a20b62927ba19fc07e24c0d751/logos/png/white/drone-logo-png-white-256.png
-      color: "#e04414"
+      color: '#e04414'
       message: netsoc.co failed for {{build.author}}. Build num {{build.number}}. {{build.link}}
     when:
       event:
         - push
       branch:
-        - master
+        - new_website
       status:
         - failure
 
