@@ -11,9 +11,10 @@ const Root = styled.div`
 export interface RootProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export default function(props: RootProps): React.ReactElement<RootProps> {
+  const [navShrink, setNavShrink] = React.useState(false);
   return (
     <Root {...props}>
-      <NavBar />
+      <NavBar shrink={navShrink} />
     </Root>
   );
 }

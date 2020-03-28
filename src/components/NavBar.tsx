@@ -1,16 +1,18 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-interface RootProps {}
+interface RootProps {
+  shrink: boolean;
+}
 const Root = styled.nav<RootProps>`
   padding: 0;
   position: fixed;
-  background-color: #161616;
+  background-color: #1616164d;
   width: 100%;
   height: 100px;
 `;
 
-export interface NavBarProps {}
+export interface NavBarProps extends RootProps {}
 export default function(props: NavBarProps): React.ReactElement<NavBarProps> {
-  return <Root></Root>;
+  return <Root shrink={props.shrink}></Root>;
 }
