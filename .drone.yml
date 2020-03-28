@@ -6,7 +6,7 @@ steps:
     image: plugins/docker
     settings:
       tags:
-        - '$(DRONE_COMMIT_SHA:0:7)'
+        - '${DRONE_COMMIT_SHA:0:7}'
         - new
       repo: docker.netsoc.co/public/netsoc.co
       registry: docker.netsoc.co
