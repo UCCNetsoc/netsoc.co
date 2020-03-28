@@ -1,5 +1,6 @@
-import * as React from "react";
-import styled from "styled-components";
+import * as React from 'react';
+import styled from 'styled-components';
+import NavBar from '../components/NavBar';
 
 const Root = styled.div`
   margin: 0;
@@ -10,5 +11,9 @@ const Root = styled.div`
 export interface RootProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export default function(props: RootProps): React.ReactElement<RootProps> {
-  return <Root {...props}></Root>;
+  return (
+    <Root {...props}>
+      <NavBar />
+    </Root>
+  );
 }
