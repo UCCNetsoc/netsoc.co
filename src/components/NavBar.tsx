@@ -9,7 +9,7 @@ const Root = styled.nav<RootProps>`
   position: fixed;
   background-color: #1616164d;
   width: 100%;
-  height: 100px;
+  height: ${({ shrink }) => (shrink ? '60px' : '100px')};
 `;
 
 export interface NavBarProps extends RootProps {}
