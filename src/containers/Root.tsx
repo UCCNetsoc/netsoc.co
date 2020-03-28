@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import NavBar from '../components/NavBar';
+import Carousel from '../components/Carousel';
 
 const Root = styled.div`
   margin: 0;
@@ -15,6 +16,7 @@ export default function(props: RootProps): React.ReactElement<RootProps> {
   return (
     <Root {...props}>
       <NavBar shrink={navShrink} />
+      <Carousel />
     </Root>
   );
 }
