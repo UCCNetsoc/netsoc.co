@@ -10,6 +10,8 @@ const Root = styled.nav<RootProps>`
   background-color: #1616164d;
   width: 100%;
   height: ${({ shrink }) => (shrink ? '60px' : '100px')};
+  transition: all 0.2s linear;
+  border-bottom: 5px #0c8df5 solid;
 `;
 
 export interface NavBarProps extends RootProps {}
