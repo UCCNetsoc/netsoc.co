@@ -15,5 +15,5 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"]
   },
-  "include": ["global.d.ts", "src/**/*", "public/img/*"]
+  "include": ["global.d.ts", "src/**/*"]
 }
