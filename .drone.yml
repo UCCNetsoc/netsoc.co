@@ -1,0 +1,88 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: build
+    image: plugins/docker
+    settings:
+      tags:
+        - '${DRONE_COMMIT_SHA:0:7}'
+        - new
+      repo: docker.netsoc.co/public/netsoc.co
+      registry: docker.netsoc.co
+      username:
+        from_secret: registry_pub_user
+      password:
+        from_secret: registry_pub_token
+    when:
+      event:
+        - push
+      branch:
+        - new_website
+
+  - name: discord_notif_success
+    image: appleboy/drone-discord
+    environment:
+      WEBHOOK_ID:
+        from_secret: discord_webhook_id
+      WEBHOOK_TOKEN:
+        from_secret: discord_webhook_token
+    settings:
+      username: Netsoc CI
+      avatar_url: https://raw.githubusercontent.com/drone/brand/3051b0d85318a2a20b62927ba19fc07e24c0d751/logos/png/white/drone-logo-png-white-256.png
+      color: '#42f483'
+      message: netsoc.co new_website successfully built and pushed. Build num {{build.number}}. {{build.link}}
+    when:
+      event:
+        - push
+      branch:
+        - new_website
+      status:
+        - success
+  - name: discord_notif_failure
+    image: appleboy/drone-discord
+    environment:
+      WEBHOOK_ID:
+        from_secret: discord_webhook_id
+      WEBHOOK_TOKEN:
+        from_secret: discord_webhook_token
+    settings:
+      username: Netsoc CI
+      avatar_url: https://raw.githubusercontent.com/drone/brand/3051b0d85318a2a20b62927ba19fc07e24c0d751/logos/png/white/drone-logo-png-white-256.png
+      color: '#e04414'
+      message: netsoc.co failed for {{build.author}}. Build num {{build.number}}. {{build.link}}
+    when:
+      event:
+        - push
+      branch:
+        - new_website
+      status:
+        - failure
+
+---
+kind: secret
+name: discord_webhook_id
+get:
+  path: discord/sysadmins_webhook
+  name: discord_webhook_id
+
+---
+kind: secret
+name: discord_webhook_token
+get:
+  path: discord/sysadmins_webhook
+  name: discord_webhook_token
+
+---
+kind: secret
+name: registry_pub_user
+get:
+  path: docker_registry/harbor
+  name: harbor_pub_user
+
+---
+kind: secret
+name: registry_pub_token
+get:
+  path: docker_registry/harbor
+  name: harbor_pub_token
