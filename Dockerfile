@@ -14,4 +14,4 @@ WORKDIR /usr/share/nginx/html
 
 COPY --from=build /app/dist .
 
-LABEL maintainer="netsoc@uccsocieties.co"
+LABEL maintainer="netsoc@uccsocieties.ie"
