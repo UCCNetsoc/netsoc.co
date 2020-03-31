@@ -14,7 +14,7 @@ const Root = styled.nav<RootProps>`
   width: 100%;
   height: ${({ shrink }) => (shrink ? '60px' : '100px')};
   transition: all 0.2s linear;
-  border-bottom: 5px #0c8df5 solid;
+  border-bottom: 2px rgba(0, 0, 0, 0.3) solid;
   backdrop-filter: blur(30px); /* A nice to have but not necessary */
   & .logo {
     height: ${({ shrink }) => (shrink ? '20px' : '40px')};
