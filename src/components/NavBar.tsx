@@ -9,10 +9,11 @@ const Root = styled.nav<RootProps>`
   position: fixed;
   font-family: 'Bebas Neue', sans-serif;
   padding: 0 2em;
+  padding-right: 0;
   display: flex;
   background-color: #1616164d;
   align-items: center;
-  width: calc(100% - 4em);
+  width: calc(100% - 2em);
   height: ${({ shrink }) => (shrink ? '60px' : '100px')};
   transition: all 0.2s linear;
   border-bottom: 2px rgba(0, 0, 0, 0.3) solid;
@@ -52,6 +53,17 @@ const Root = styled.nav<RootProps>`
       )
       no-repeat 0 0;
   }
+  & .discord,
+  & .discord:hover {
+    background: #003e70;
+  }
+  & .admin {
+    background: #0c8df5;
+  }
+  & .admin:hover,
+  & .discord:hover {
+    background: #111;
+  }
 `;
 
 export interface NavBarProps extends RootProps {}
@@ -71,6 +83,12 @@ export default function(props: NavBarProps): React.ReactElement<NavBarProps> {
         </a>
         <a href="#">
           <li>SERVICES</li>
+        </a>
+        <a href="http://discord.netsoc.co/" target="_blank">
+          <li className="discord">DISCORD</li>
+        </a>
+        <a href="http://admin.netsoc.co" target="_blank">
+          <li className="admin">ADMIN PANEL</li>
         </a>
       </ul>
     </Root>
