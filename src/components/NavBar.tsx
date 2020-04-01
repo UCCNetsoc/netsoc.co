@@ -34,7 +34,7 @@ const Root = styled.nav<RootProps>`
   & li {
     padding: 1em 0.5em;
     vertical-align: middle;
-    font-size: 2em;
+    font-size: ${({ shrink }) => (shrink ? '1.2em' : '2em')};
     letter-spacing: 2px;
     background: linear-gradient(
         90deg,
