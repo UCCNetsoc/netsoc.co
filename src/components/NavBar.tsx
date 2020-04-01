@@ -53,7 +53,7 @@ const Root = styled.nav<RootProps>`
       )
       no-repeat 0 0;
   }
-  & .discord,
+  & .discord {
     background: #003e70;
   }
   & .admin {
