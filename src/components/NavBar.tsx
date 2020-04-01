@@ -29,12 +29,28 @@ const Root = styled.nav<RootProps>`
     padding: 0;
   }
   & ul a {
+    overflow: hidden;
   }
   & li {
-    width: 50%;
-    padding-left: 1em;
+    padding: 1em 0.5em;
+    vertical-align: middle;
     font-size: 2em;
     letter-spacing: 2px;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 123, 222, 1) 0%,
+        rgba(0, 123, 222, 1) 100%
+      )
+      no-repeat 0 110px;
+    transition: all 0.15s ease-in-out;
+  }
+  & li:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(0, 123, 222, 1) 0%,
+        rgba(0, 123, 222, 1) 100%
+      )
+      no-repeat 0 0;
   }
 `;
 
@@ -54,7 +70,7 @@ export default function(props: NavBarProps): React.ReactElement<NavBarProps> {
           <li>NEWS</li>
         </a>
         <a href="#">
-          <li></li>
+          <li>SERVICES</li>
         </a>
       </ul>
     </Root>
