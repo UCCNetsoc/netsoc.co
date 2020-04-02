@@ -12,8 +12,9 @@
     "paths": {
       "~*": ["./*"]
     },
-    "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"]
   },
-  "include": ["global.d.ts", "src/**/*"]
+  "typeRoots": ["node_modules/@types"],
+  "include": ["global.d.ts", "src/**/*"],
+  "exclude": ["node_modules"]
 }
