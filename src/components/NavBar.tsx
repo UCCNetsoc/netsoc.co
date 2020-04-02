@@ -8,9 +8,9 @@ interface RootProps {
   open: boolean;
 }
 const Root = styled.nav<RootProps>`
-  --height: 100px;
-  --logoHeight: 40px;
-  --fontSize: 2em;
+  --height: 80px;
+  --logoHeight: 30px;
+  --fontSize: 1.5em;
   position: fixed;
   font-family: 'Bebas Neue', sans-serif;
   padding: 0 2em;
@@ -73,11 +73,6 @@ const Root = styled.nav<RootProps>`
     padding: 0 2em;
   }
 
-  @media screen and (max-width: 1100px) {
-    --height: 80px;
-    --logoHeight: 30px;
-    --fontSize: 1.5em;
-  }
   @media screen and (max-width: 850px) {
     --height: 60px;
     --logoHeight: 20px;
