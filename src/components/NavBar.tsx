@@ -11,11 +11,6 @@ const Root = styled.nav<RootProps>`
   --height: 100px;
   --logoHeight: 40px;
   --fontSize: 2em;
-  @media screen and (max-width: 1100px) {
-    --height: 80px;
-    --logoHeight: 30px;
-    --fontSize: 1.5em;
-  }
   position: fixed;
   font-family: 'Bebas Neue', sans-serif;
   padding: 0 2em;
@@ -78,21 +73,30 @@ const Root = styled.nav<RootProps>`
     padding: 0 2em;
   }
 
+  @media screen and (max-width: 1100px) {
+    --height: 80px;
+    --logoHeight: 30px;
+    --fontSize: 1.5em;
+  }
   @media screen and (max-width: 850px) {
+    --height: 60px;
+    --logoHeight: 20px;
+    --fontSize: 1.2em;
     & .menu {
-      display: block;
       transition: 0.3s all ease-in-out;
       transform: ${({ open }) => (open ? 'rotateY(150deg)' : 'rotateY(0deg)')};
+      display: flex;
+      align-items: center;
     }
     & ul {
       position: fixed;
       display: block;
-      width: 280px;
+      width: 240px;
       background-color: #161616a8;
       box-shadow: ${({ open }) => (open ? '0 0 200px black' : 'none')};
-      top: 82px;
+      top: 62px;
       margin: 0;
-      left: ${({ open }) => (open ? '0' : '-280px')};
+      left: ${({ open }) => (open ? '0' : '-240px')};
       height: 100vh;
       transition: 0.3s all ease-in-out;
     }
@@ -129,7 +133,7 @@ export default function(props: NavBarProps): React.ReactElement<NavBarProps> {
         </a>
       </ul>
       <div onClick={() => setOpen(!open)} className="menu">
-        <Menu size={40} color={'#fff'} />
+        <Menu size={30} color={'#fff'} />
       </div>
     </Root>
   );
