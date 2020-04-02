@@ -74,6 +74,23 @@ const Root = styled.nav<RootProps>`
   }
   & .menu {
     display: none;
+    padding: 2em;
+  }
+
+  @media screen and (max-width: 850px) {
+    & .menu {
+      display: block;
+    }
+    & ul {
+      position: fixed;
+      display: block;
+      width: 200px;
+      background-color: #161616a8;
+      top: 82px;
+      margin: 0;
+      left: 0;
+      height: 100vh;
+    }
   }
 `;
 
@@ -101,10 +118,10 @@ export default function(props: NavBarProps): React.ReactElement<NavBarProps> {
         <a href="http://admin.netsoc.co" target="_blank">
           <li className="admin">ADMIN PANEL</li>
         </a>
-        <div className="menu">
-          <Menu size={25} color={'#fff'} />
-        </div>
       </ul>
+      <div className="menu">
+        <Menu size={40} color={'#fff'} />
+      </div>
     </Root>
   );
 }
