@@ -6,6 +6,14 @@ interface RootProps {
   shrink: boolean;
 }
 const Root = styled.nav<RootProps>`
+  --height: 100px;
+  --logoHeight: 40px;
+  --fontSize: 2em;
+  @media screen and (max-width: 1100px) {
+    --height: 80px;
+    --logoHeight: 30px;
+    --fontSize: 1.5em;
+  }
   position: fixed;
   font-family: 'Bebas Neue', sans-serif;
   padding: 0 2em;
@@ -14,13 +22,13 @@ const Root = styled.nav<RootProps>`
   background-color: #1616164d;
   align-items: center;
   width: calc(100% - 2em);
-  height: ${({ shrink }) => (shrink ? '60px' : '100px')};
+  height: ${({ shrink }) => (shrink ? '60px' : 'var(--height)')};
   transition: all 0.2s linear;
   border-bottom: 2px rgba(0, 0, 0, 0.3) solid;
   backdrop-filter: blur(30px); /* A nice to have but not necessary */
   justify-content: space-between;
   & .logo {
-    height: ${({ shrink }) => (shrink ? '20px' : '40px')};
+    height: ${({ shrink }) => (shrink ? '20px' : 'var(--logoHeight)')};
     width: auto;
   }
   & ul {
@@ -35,7 +43,7 @@ const Root = styled.nav<RootProps>`
   & li {
     padding: 1em 0.5em;
     vertical-align: middle;
-    font-size: ${({ shrink }) => (shrink ? '1.2em' : '2em')};
+    font-size: ${({ shrink }) => (shrink ? '1.2em' : 'var(--fontSize)')};
     letter-spacing: 2px;
     background: linear-gradient(
         90deg,
