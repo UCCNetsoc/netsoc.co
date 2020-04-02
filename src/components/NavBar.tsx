@@ -86,17 +86,18 @@ const Root = styled.nav<RootProps>`
     & ul {
       position: fixed;
       display: block;
-      width: 240px;
+      width: 100%;
       background-color: #161616a8;
       box-shadow: ${({ open }) => (open ? '0 0 200px black' : 'none')};
       top: 62px;
       margin: 0;
-      left: ${({ open }) => (open ? '0' : '-240px')};
+      left: ${({ open }) => (open ? '0' : '100%')};
       height: 100vh;
       transition: 0.3s all ease-in-out;
     }
     & li {
       padding: 1em 1em;
+      text-align: center;
     }
   }
 `;
