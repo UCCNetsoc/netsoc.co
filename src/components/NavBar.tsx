@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import logoHorizontal from '../../public/img/logo-horizontal.svg';
-import { Menu } from 'react-feather';
+import Menu from './MenuIcon';
 
 interface RootProps {
   shrink: boolean;
@@ -72,6 +72,9 @@ const Root = styled.nav<RootProps>`
   & .discord:hover {
     background: #111;
   }
+  & .menu {
+    display: none;
+  }
 `;
 
 export interface NavBarProps extends RootProps {}
@@ -98,7 +101,9 @@ export default function(props: NavBarProps): React.ReactElement<NavBarProps> {
         <a href="http://admin.netsoc.co" target="_blank">
           <li className="admin">ADMIN PANEL</li>
         </a>
-        <Menu></Menu>
+        <div className="menu">
+          <Menu size={25} color={'#fff'} />
+        </div>
       </ul>
     </Root>
   );
