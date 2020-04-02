@@ -5,6 +5,7 @@ import Menu from './MenuIcon';
 
 interface RootProps {
   shrink: boolean;
+  open: boolean;
 }
 const Root = styled.nav<RootProps>`
   --height: 100px;
@@ -74,30 +75,38 @@ const Root = styled.nav<RootProps>`
   }
   & .menu {
     display: none;
-    padding: 2em;
+    padding: 0 2em;
   }
 
   @media screen and (max-width: 850px) {
     & .menu {
       display: block;
+      transition: 0.3s all ease-in-out;
+      transform: ${({ open }) => (open ? 'rotateY(150deg)' : 'rotateY(0deg)')};
     }
     & ul {
       position: fixed;
       display: block;
-      width: 200px;
+      width: 280px;
       background-color: #161616a8;
+      box-shadow: ${({ open }) => (open ? '0 0 200px black' : 'none')};
       top: 82px;
       margin: 0;
-      left: 0;
+      left: ${({ open }) => (open ? '0' : '-280px')};
       height: 100vh;
+      transition: 0.3s all ease-in-out;
+    }
+    & li {
+      padding: 1em 1em;
     }
   }
 `;
 
 export interface NavBarProps extends RootProps {}
 export default function(props: NavBarProps): React.ReactElement<NavBarProps> {
+  const [open, setOpen] = React.useState(false); // For mobile drawer state
   return (
-    <Root shrink={props.shrink}>
+    <Root open={open} shrink={props.shrink}>
       <img className="logo" src={logoHorizontal} alt="NETSOC" />
       <ul>
         <a href="#">
@@ -119,7 +128,7 @@ export default function(props: NavBarProps): React.ReactElement<NavBarProps> {
           <li className="admin">ADMIN PANEL</li>
         </a>
       </ul>
-      <div className="menu">
+      <div onClick={() => setOpen(!open)} className="menu">
         <Menu size={40} color={'#fff'} />
       </div>
     </Root>
