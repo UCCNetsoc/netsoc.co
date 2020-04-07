@@ -19,6 +19,7 @@ const Root = styled.nav<RootProps>`
   background-color: #1616164d;
   align-items: center;
   width: calc(100% - 2em);
+  z-index: 100;
   height: ${({ shrink }) => (shrink ? '60px' : 'var(--height)')};
   transition: all 0.2s linear;
   border-bottom: 2px rgba(0, 0, 0, 0.3) solid;
@@ -103,7 +104,7 @@ const Root = styled.nav<RootProps>`
 `;
 
 export interface NavBarProps extends RootProps {}
-export default function(props: NavBarProps): React.ReactElement<NavBarProps> {
+export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
   const [open, setOpen] = React.useState(false); // For mobile drawer state
   return (
     <Root open={open} shrink={props.shrink}>
