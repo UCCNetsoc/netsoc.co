@@ -29,7 +29,7 @@ const News = styled.div`
   min-height: 100px;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
-  padding: 20px;
+  padding: 20px 0;
   & h1 {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
