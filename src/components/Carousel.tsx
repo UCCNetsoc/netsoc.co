@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import imgMain from '../../public/img/1.jpg';
+import logoImg from '../../public/img/logo.svg';
 
 interface RootProps {}
 const Root = styled.div<RootProps>`
@@ -18,14 +19,21 @@ const Background = styled.img`
   z-index: -100;
   position: relative;
 `;
+const Logo = styled.img`
+  margin-top: 100px;
+  width: 200px;
+`;
 
 export interface CarouselProps extends RootProps {}
-export default function(
+export default function (
   props: CarouselProps
 ): React.ReactElement<CarouselProps> {
   return (
     <Root>
       <Background src={imgMain} alt="" />
+      <div style={{ marginTop: '-80vh', textAlign: 'center' }}>
+        <Logo src={logoImg} />
+      </div>
     </Root>
   );
 }
