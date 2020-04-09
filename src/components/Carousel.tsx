@@ -24,9 +24,9 @@ const Logo = styled.img`
   display: inline-block;
 `;
 const News = styled.div`
-  margin-top: 100px;
+  margin-top: 15vh;
   width: 100%;
-  min-height: 100px;
+  height: 65vh;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   padding: 20px 0;
@@ -43,15 +43,20 @@ const News = styled.div`
   }
   & .eventContainer {
     display: flex;
-    justify-content: space-between;
-    width: 50%;
+    justify-content: space-evenly;
+    width: 80%;
     margin: auto;
   }
   & .event {
     color: #fff;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+    max-width: 30%;
   }
-  & .event:last-child {
+  & .event img {
+    width: 100%;
+    margin-top: 1em;
+    border-radius: 0.3em;
   }
   & .event h1 {
     font-size: 2em;
@@ -62,6 +67,9 @@ const News = styled.div`
     font-style: italic;
     font-size: 1em;
     margin: 0;
+  }
+  & .event p {
+    font-size: 0.95em;
   }
 `;
 
@@ -80,10 +88,30 @@ export default function (
             <div className="event">
               <h1>Gamer time</h1>
               <h2>1/1/1970</h2>
+              <img
+                src="https://scontent-ams4-1.xx.fbcdn.net/v/t1.0-9/87009171_3249079355153927_6271120072882782208_o.jpg?_nc_cat=103&_nc_sid=b386c4&_nc_ohc=ZXXfT7CQbpoAX-wtBKB&_nc_ht=scontent-ams4-1.xx&oh=580504501839e51aec91463abd4310f5&oe=5EB63593"
+                alt=""
+              />
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Dolorem officia assumenda iure libero repellendus ad veritatis
+                possimus, dolores eveniet. Labore laudantium tempora harum
+                dignissimos sequi architecto accusantium itaque natus rerum.
+              </p>
             </div>
             <div className="event">
-              <h1>Gamer time</h1>
-              <h2>1/1/1970</h2>
+              <h1>Tech Time</h1>
+              <h2>3/1/1970</h2>
+              <img
+                src="https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/83852108_3253488654712997_6761968224167788544_o.jpg?_nc_cat=108&_nc_sid=b386c4&_nc_ohc=v30OxkcNSzoAX8puEc6&_nc_ht=scontent-amt2-1.xx&oh=ec13e3244f1fc8f27af8142177e6416c&oe=5EB4ED2D"
+                alt=""
+              />
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Dolorem officia assumenda iure libero repellendus ad veritatis
+                possimus, dolores eveniet. Labore laudantium tempora harum
+                dignissimos sequi architecto accusantium itaque natus rerum.
+              </p>
             </div>
           </div>
         </News>
