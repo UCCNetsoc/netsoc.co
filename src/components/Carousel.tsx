@@ -33,11 +33,35 @@ const News = styled.div`
   & h1 {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
+    color: #fff;
+  }
+  & > h1 {
     left: 105px;
     margin: 0;
     position: relative;
-    color: #fff;
     font-size: 1.5em;
+  }
+  & .eventContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+  }
+  & .event {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+  }
+  & .event:last-child {
+  }
+  & .event h1 {
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+  & .event h2 {
+    position: relative;
+    font-style: italic;
+    font-size: 1em;
+    margin: 0;
   }
 `;
 
@@ -52,6 +76,16 @@ export default function (
         <News>
           <Logo src={logoImg} />
           <h1>Events</h1>
+          <div className="eventContainer">
+            <div className="event">
+              <h1>Gamer time</h1>
+              <h2>1/1/1970</h2>
+            </div>
+            <div className="event">
+              <h1>Gamer time</h1>
+              <h2>1/1/1970</h2>
+            </div>
+          </div>
         </News>
       </div>
     </Root>
