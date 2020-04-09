@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import imgMain from '../../public/img/1.jpg';
-import logoImg from '../../public/img/logo-horizontal.svg';
 
 interface RootProps {}
 const Root = styled.div<RootProps>`
@@ -36,10 +35,9 @@ const News = styled.div`
     color: #fff;
   }
   & > h1 {
-    left: 105px;
     margin: 0;
     position: relative;
-    font-size: 1.5em;
+    font-size: 4em;
   }
   & .eventContainer {
     display: flex;
@@ -71,6 +69,32 @@ const News = styled.div`
   & .event p {
     font-size: 0.95em;
   }
+
+  @media screen and (max-width: 850px) {
+    & > h1 {
+      font-size: 2em;
+    }
+    & .event h1 {
+      font-size: 1em;
+    }
+    & .event h2 {
+      font-size: 0.7em;
+    }
+    & .event p {
+      font-size: 0.7em;
+    }
+    & .eventContainer {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+    & .event {
+      max-width: 60%;
+    }
+    & .event:last-child {
+      display: none;
+    }
+  }
 `;
 
 export interface CarouselProps extends RootProps {}
@@ -82,7 +106,6 @@ export default function (
       <Background src={imgMain} alt="" />
       <div style={{ marginTop: '-80vh', textAlign: 'center' }}>
         <News>
-          <Logo src={logoImg} />
           <h1>Events</h1>
           <div className="eventContainer">
             <div className="event">
