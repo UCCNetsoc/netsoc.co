@@ -23,9 +23,9 @@ const Logo = styled.img`
   display: inline-block;
 `;
 const News = styled.div`
-  margin-top: 15vh;
+  margin-top: 7vh;
   width: 100%;
-  height: 65vh;
+  height: 75vh;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   padding: 20px 0;
