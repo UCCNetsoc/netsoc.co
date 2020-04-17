@@ -4,7 +4,7 @@ import imgMain from '../../public/img/1.jpg';
 
 interface RootProps {}
 const Root = styled.div<RootProps>`
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
   width: 100%;
   box-shadow: inset 0px 0px 1000px 100px rgba(0, 0, 0, 0.78);
@@ -92,6 +92,7 @@ const News = styled.div`
   }
 
   @media screen and (max-width: 850px) {
+    margin-top: 40px;
     & > h1 {
       font-size: 2em;
     }
