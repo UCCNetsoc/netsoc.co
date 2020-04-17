@@ -70,6 +70,27 @@ const News = styled.div`
     font-size: 0.95em;
   }
 
+  @media screen and (max-height: 800px) {
+    & > h1 {
+      font-size: 2em;
+    }
+    margin-top: 75px;
+    & .event p {
+      font-size: 0.7em;
+    }
+    & .event h1 {
+      font-size: 1em;
+    }
+    & .event h2 {
+      font-size: 0.7em;
+    }
+    & .event img {
+      width: 75%;
+      margin-top: 1em;
+      border-radius: 0.3em;
+    }
+  }
+
   @media screen and (max-width: 850px) {
     & > h1 {
       font-size: 2em;
