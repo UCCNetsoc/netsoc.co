@@ -156,8 +156,8 @@ export default function (
               for (let event of events) {
                 try {
                   const date = new Date(event.date * 1000);
-                  output.push(
-                    <div className="event">
+                  const element = (
+                    <div key={event.date} className="event">
                       <h1>{event.title}</h1>
                       <h2>
                         {(date.getMonth() > 8
@@ -174,6 +174,7 @@ export default function (
                       <p>{event.description}</p>
                     </div>
                   );
+                  output.push(element);
                 } catch ({ message }) {
                   console.error(message);
                 }
