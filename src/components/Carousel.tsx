@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import imgMain from '../../public/img/1.jpg';
+import { API_URL } from '../config';
 
 interface RootProps {}
 const Root = styled.div<RootProps>`
@@ -119,10 +120,29 @@ const News = styled.div`
   }
 `;
 
+interface IEvent {
+  title: string;
+  description: string;
+  image_url: string;
+}
+
 export interface CarouselProps extends RootProps {}
 export default function (
   props: CarouselProps
 ): React.ReactElement<CarouselProps> {
+  const [events, setEvents] = React.useState<IEvent[]>([]);
+  React.useEffect(() => {
+    (async () => {
+      try {
+        const data = await fetch(`${API_URL}/events?q=2`);
+        const recieved = (await data.json()) as IEvent[];
+        setEvents(recieved);
+        console.log(recieved);
+      } catch ({ message }) {
+        console.error(message);
+      }
+    })();
+  }, []);
   return (
     <Root>
       <Background src={imgMain} alt="" />
