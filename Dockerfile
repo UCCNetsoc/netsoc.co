@@ -1,5 +1,7 @@
 FROM node:12 as build
 
+ENV API_URL=http://events.netsoc.dev
+
 WORKDIR /app
 
 COPY . .
