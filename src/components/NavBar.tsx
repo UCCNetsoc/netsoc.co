@@ -5,7 +5,7 @@ import Menu from './MenuIcon';
 
 interface RootProps {
   shrink: boolean;
-  open: boolean;
+  open?: boolean;
 }
 const Root = styled.nav<RootProps>`
   --height: 80px;
