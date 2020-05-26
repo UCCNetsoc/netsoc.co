@@ -8,10 +8,14 @@ const Root = styled.div<RootProps>`
   margin-top: -1px;
   & .announce {
     margin-left: 20%;
+    border-top: solid 5px #003e7073;
+    overflow: hidden;
+    position: relative;
   }
   & .announce h1 {
     font-family: 'Lato', sans-serif;
     font-size: 56px;
+    padding-top: 10px;
     text-transform: uppercase;
     margin: 0;
     color: #003e70;
@@ -20,8 +24,17 @@ const Root = styled.div<RootProps>`
     font-family: 'Roboto', sans-serif;
     color: #fff;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-    width: 80%;
+    width: 60%;
     text-overflow: wrap;
+  }
+  & .announce .imgContent {
+    width: 50%;
+  }
+  & .announce img {
+    width: 40%;
+    float: right;
+    right: 0;
+    position: absolute;
   }
 `;
 
@@ -67,11 +80,13 @@ export default function (
               }).format(date);
               const element = (
                 <div key={announce.date} className="announce">
-                  <h1>{`${da} ${mo} ${ye}`}</h1>
-                  <p>{announce.content}</p>
                   {announce.image_url && (
                     <img src={announce.image_url} alt="" />
                   )}
+                  <h1>{`${da} ${mo} ${ye}`}</h1>
+                  <p className={announce.image_url && 'imgContent'}>
+                    {announce.content}
+                  </p>
                 </div>
               );
               output.push(element);
