@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import imgMain from '../../public/img/1.jpg';
+import loader from '../../public/img/loader.svg';
 import { API_URL } from '../config';
 
 interface RootProps {}
@@ -30,6 +31,14 @@ const News = styled.div`
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   padding: 20px 0;
+  & .error {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    top: 10vh;
+    font-size: 2em;
+    position: relative;
+  }
   & h1 {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
@@ -132,6 +141,8 @@ export default function (
   props: CarouselProps
 ): React.ReactElement<CarouselProps> {
   const [events, setEvents] = React.useState<IEvent[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState('');
   React.useEffect(() => {
     (async () => {
       try {
@@ -139,9 +150,14 @@ export default function (
         const recieved = (await data.json()) as IEvent[];
         setEvents(recieved);
         console.log(recieved);
+        if (recieved.length === 0) {
+          setError('There are currently no upcoming events');
+        }
       } catch ({ message }) {
         console.error(message);
+        setError('An error occurred fetching events');
       }
+      setLoading(false);
     })();
   }, []);
   return (
@@ -150,38 +166,44 @@ export default function (
       <div style={{ marginTop: '-80vh', textAlign: 'center' }}>
         <News>
           <h1>Events</h1>
-          <div className="eventContainer">
-            {(() => {
-              const output: JSX.Element[] = [];
-              for (let event of events) {
-                try {
-                  const date = new Date(event.date * 1000);
-                  const element = (
-                    <div key={event.date} className="event">
-                      <h1>{event.title}</h1>
-                      <h2>
-                        {(date.getMonth() > 8
-                          ? date.getMonth() + 1
-                          : '0' + (date.getMonth() + 1)) +
-                          '/' +
-                          (date.getDate() > 9
-                            ? date.getDate()
-                            : '0' + date.getDate()) +
-                          '/' +
-                          date.getFullYear()}
-                      </h2>
-                      <img src={event.image_url} alt="" />
-                      <p>{event.description}</p>
-                    </div>
-                  );
-                  output.push(element);
-                } catch ({ message }) {
-                  console.error(message);
+          {loading ? (
+            <img className="loading" src={loader} alt="Loading" />
+          ) : error ? (
+            <span className="error">{error}</span>
+          ) : (
+            <div className="eventContainer">
+              {(() => {
+                const output: JSX.Element[] = [];
+                for (let event of events) {
+                  try {
+                    const date = new Date(event.date * 1000);
+                    const element = (
+                      <div key={event.date} className="event">
+                        <h1>{event.title}</h1>
+                        <h2>
+                          {(date.getMonth() > 8
+                            ? date.getMonth() + 1
+                            : '0' + (date.getMonth() + 1)) +
+                            '/' +
+                            (date.getDate() > 9
+                              ? date.getDate()
+                              : '0' + date.getDate()) +
+                            '/' +
+                            date.getFullYear()}
+                        </h2>
+                        <img src={event.image_url} alt="" />
+                        <p>{event.description}</p>
+                      </div>
+                    );
+                    output.push(element);
+                  } catch ({ message }) {
+                    console.error(message);
+                  }
                 }
-              }
-              return output;
-            })()}
-          </div>
+                return output;
+              })()}
+            </div>
+          )}
         </News>
       </div>
     </Root>
