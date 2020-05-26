@@ -23,8 +23,10 @@ const Root = styled.div<RootProps>`
     top: 10px;
   }
   @media screen and (max-width: 850px) {
+    height: 40px;
     & span {
       margin-left: 0;
+      font-size: 30px;
       text-align: center;
     }
   }

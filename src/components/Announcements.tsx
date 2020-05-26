@@ -50,6 +50,21 @@ const Root = styled.div<RootProps>`
     right: 0;
     position: absolute;
   }
+  @media screen and (max-width: 850px) {
+    & .announce img {
+      display: none;
+    }
+    & .announce p,
+    & .announce .imgContent {
+      width: 90%;
+    }
+    & .announce {
+      margin-left: 10%;
+    }
+    & .announce h1 {
+      font-size: 36px;
+    }
+  }
 `;
 
 interface IAnnouncement {
