@@ -5,6 +5,7 @@ import Carousel from './Carousel';
 import Header from '../components/Header';
 import News from './News';
 import About from './About';
+import * as Scroll from 'react-scroll';
 
 const Root = styled.div`
   margin: 0;
@@ -13,15 +14,26 @@ const Root = styled.div`
 `;
 
 export interface RootProps extends React.HTMLAttributes<HTMLDivElement> {}
-
 export default function (props: RootProps): React.ReactElement<RootProps> {
   const [navShrink, setNavShrink] = React.useState(false);
+  React.useEffect(() => {
+    Scroll.Events.scrollEvent.register('begin', (to) => console.log(to));
+    window.addEventListener('scroll', (e) => {
+      setNavShrink(
+        Scroll.scrollSpy.currentPositionY(document) > window.innerHeight - 300
+      );
+    });
+    Scroll.scrollSpy.update();
+  });
   return (
     <Root {...props}>
       <NavBar shrink={navShrink} />
+      <Scroll.Element name="home" />
       <Carousel />
+      <Scroll.Element name="news" />
       <Header value="News" color="#007BDE" />
       <News />
+      <Scroll.Element name="about" />
       <About />
     </Root>
   );
