@@ -114,10 +114,10 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
           <li>HOME</li>
         </a>
         <a href="#">
-          <li>ABOUT</li>
+          <li>NEWS</li>
         </a>
         <a href="#">
-          <li>NEWS</li>
+          <li>ABOUT</li>
         </a>
         <a href="#">
           <li>SERVICES</li>

@@ -22,7 +22,6 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <Carousel />
       <Header value="News" color="#007BDE" />
       <News />
-      <Header value="About" color="#0CEBD7" />
       <About />
     </Root>
   );
