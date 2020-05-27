@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 interface RootProps {
   color: string;
+  textColor?: string;
 }
 const Root = styled.div<RootProps>`
-  color: #fff;
+  color: ${(props) => props.textColor ?? '#fff'};
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -22,7 +23,7 @@ const Root = styled.div<RootProps>`
     margin-top: 30px;
     margin-bottom: 30px;
     width: 50%;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
   }
   & > img {
     width: 30%;
@@ -48,7 +49,7 @@ export interface BoxProps extends RootProps {
 }
 export default function (props: BoxProps): React.ReactElement<BoxProps> {
   return (
-    <Root color={props.color}>
+    <Root color={props.color} textColor={props.textColor}>
       <img src={props.image} alt="Image" />
       <p>{props.value}</p>
     </Root>
