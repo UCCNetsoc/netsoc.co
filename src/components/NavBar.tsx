@@ -128,6 +128,7 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
           className="link"
           smooth={true}
           spy={true}
+          offset={-62}
         >
           <li>NEWS</li>
         </Link>
@@ -137,6 +138,7 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
           className="link"
           smooth={true}
           spy={true}
+          offset={-62}
         >
           <li>ABOUT</li>
         </Link>
