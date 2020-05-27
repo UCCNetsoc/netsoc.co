@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import News from './News';
 import About from './About';
 import * as Scroll from 'react-scroll';
+import Services from './Services';
 
 const Root = styled.div`
   margin: 0;
@@ -35,6 +36,8 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <News />
       <Scroll.Element name="about" />
       <About />
+      <Scroll.Element name="services" />
+      <Services />
     </Root>
   );
 }

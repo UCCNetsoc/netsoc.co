@@ -4,6 +4,7 @@ import styled from 'styled-components';
 interface RootProps {
   color: string;
   textColor?: string;
+  padding?: boolean;
 }
 const Root = styled.div<RootProps>`
   color: ${(props) => props.textColor ?? '#fff'};
@@ -12,7 +13,7 @@ const Root = styled.div<RootProps>`
   overflow: hidden;
   position: relative;
   background-color: ${(props) => props.color};
-  padding-left: 20%;
+  padding-left: ${(props) => (props.padding ? '10%' : '20%')};
   margin-top: -1px;
   & p {
     margin: 0;
@@ -22,7 +23,7 @@ const Root = styled.div<RootProps>`
     position: relative;
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 50%;
+    width: ${(props) => (props.padding ? '80%' : '50%')};
     /* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
   }
   & > img {
@@ -45,12 +46,18 @@ const Root = styled.div<RootProps>`
 
 export interface BoxProps extends RootProps {
   value: string;
-  image: string;
+  children?: Array<React.ReactText | JSX.Element> | JSX.Element;
+  image?: string;
 }
 export default function (props: BoxProps): React.ReactElement<BoxProps> {
   return (
-    <Root color={props.color} textColor={props.textColor}>
-      <img src={props.image} alt="Image" />
+    <Root
+      color={props.color}
+      textColor={props.textColor}
+      padding={props.padding}
+    >
+      {props.children}
+      {props.image && <img src={props.image} alt="Image" />}
       <p>{props.value}</p>
     </Root>
   );

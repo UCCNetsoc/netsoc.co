@@ -6,6 +6,10 @@ declare module '*.svg' {
   const link: string;
   export default link;
 }
+declare module '*.mp4' {
+  const link: string;
+  export default link;
+}
 
 declare const process: {
   env: { [k: string]: string };
