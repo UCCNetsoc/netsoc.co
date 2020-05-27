@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import Carousel from './Carousel';
 import Header from '../components/Header';
 import News from './News';
+import About from './About';
 
 const Root = styled.div`
   margin: 0;
@@ -21,6 +22,8 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <Carousel />
       <Header value="News" color="#007BDE" />
       <News />
+      <Header value="About" color="#0CEBD7" />
+      <About />
     </Root>
   );
 }

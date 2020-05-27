@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import loader from '../../public/img/loader.svg';
-import marked from 'marked';
 import { API_URL } from '../config';
 
 interface RootProps {}
