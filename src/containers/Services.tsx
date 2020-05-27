@@ -37,7 +37,7 @@ export default function (): React.ReactElement {
           <source src={Background} type="video/mp4" />
         </video>
         <div>
-          <Box color="transparent" textColor="#fff" value="">
+          <Box color="transparent" textColor="#fff">
             <Subheader>Free Server Space</Subheader>
             <p>
               Netsoc provide free hosting services available to all UCC students
@@ -48,7 +48,7 @@ export default function (): React.ReactElement {
           </Box>
         </div>
         <div>
-          <Box color="transparent" textColor="#fff" value="">
+          <Box color="transparent" textColor="#fff">
             <Subheader>Free Wordpress hosting</Subheader>
           </Box>
         </div>

@@ -15,6 +15,7 @@ const Root = styled.div<RootProps>`
   background-color: ${(props) => props.color};
   padding-left: ${(props) => (props.padding ? '10%' : '20%')};
   margin-top: -1px;
+  display: flex;
   & p {
     margin: 0;
     padding: 0;
@@ -45,7 +46,6 @@ const Root = styled.div<RootProps>`
 `;
 
 export interface BoxProps extends RootProps {
-  value: string;
   children?: Array<React.ReactText | JSX.Element> | JSX.Element;
   image?: string;
 }
@@ -56,9 +56,8 @@ export default function (props: BoxProps): React.ReactElement<BoxProps> {
       textColor={props.textColor}
       padding={props.padding}
     >
-      {props.children}
+      <section>{props.children}</section>
       {props.image && <img src={props.image} alt="Image" />}
-      <p>{props.value}</p>
     </Root>
   );
 }
