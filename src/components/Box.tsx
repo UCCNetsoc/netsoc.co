@@ -27,6 +27,12 @@ const Root = styled.div<RootProps>`
     width: ${(props) => (props.padding ? '80%' : '50%')};
     /* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
   }
+  & a {
+    font-weight: bold;
+  }
+  & a:hover {
+    text-decoration: underline;
+  }
   & > img {
     width: 30%;
     float: right;
@@ -35,12 +41,15 @@ const Root = styled.div<RootProps>`
   }
   @media screen and (max-width: 850px) {
     padding-left: 10%;
+    flex-direction: column;
     & p {
       width: 90%;
     }
     & > img {
-      width: 112%;
-      position: relative;
+      float: none;
+      position: static;
+      width: 130%;
+      margin-left: -15%;
     }
   }
 `;
