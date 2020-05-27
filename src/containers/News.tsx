@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import loader from '../../public/img/loader.svg';
+import marked from 'marked';
 import { API_URL } from '../config';
 
 interface RootProps {}
@@ -73,10 +74,8 @@ interface IAnnouncement {
   image_url?: string;
 }
 
-export interface AnnouncementsProps extends RootProps {}
-export default function (
-  props: AnnouncementsProps
-): React.ReactElement<AnnouncementsProps> {
+export interface NewsProps extends RootProps {}
+export default function (props: NewsProps): React.ReactElement<NewsProps> {
   const [announcements, setAnnouncements] = React.useState<IAnnouncement[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState('');

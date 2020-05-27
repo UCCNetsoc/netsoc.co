@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import NavBar from '../components/NavBar';
-import Carousel from '../components/Carousel';
+import Carousel from './Carousel';
 import Header from '../components/Header';
-import Announcements from '../components/Announcements';
+import News from './News';
 
 const Root = styled.div`
   margin: 0;
@@ -19,8 +19,8 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
     <Root {...props}>
       <NavBar shrink={navShrink} />
       <Carousel />
-      <Header value="Announcements" color="#007BDE" />
-      <Announcements />
+      <Header value="News" color="#007BDE" />
+      <News />
     </Root>
   );
 }
