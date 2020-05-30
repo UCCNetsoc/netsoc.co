@@ -2,10 +2,11 @@ import * as React from 'react';
 import styled from 'styled-components';
 import logoHorizontal from '../../public/img/logo-horizontal.svg';
 import Menu from './MenuIcon';
+import { Link } from 'react-scroll';
 
 interface RootProps {
   shrink: boolean;
-  open: boolean;
+  open?: boolean;
 }
 const Root = styled.nav<RootProps>`
   --height: 80px;
@@ -35,8 +36,10 @@ const Root = styled.nav<RootProps>`
     justify-content: space-between;
     padding: 0;
   }
-  & ul a {
+  & ul a,
+  & ul .link {
     overflow: hidden;
+    cursor: pointer;
   }
   & li {
     padding: 1em 0.5em;
@@ -110,18 +113,45 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
     <Root open={open} shrink={props.shrink}>
       <img className="logo" src={logoHorizontal} alt="NETSOC" />
       <ul>
-        <a href="#">
+        <Link
+          to="home"
+          duration={500}
+          className="link"
+          smooth={true}
+          spy={true}
+        >
           <li>HOME</li>
-        </a>
-        <a href="#">
-          <li>ABOUT</li>
-        </a>
-        <a href="#">
+        </Link>
+        <Link
+          to="news"
+          duration={500}
+          className="link"
+          smooth={true}
+          spy={true}
+          offset={-62}
+        >
           <li>NEWS</li>
-        </a>
-        <a href="#">
+        </Link>
+        <Link
+          to="about"
+          duration={500}
+          className="link"
+          smooth={true}
+          spy={true}
+          offset={-62}
+        >
+          <li>ABOUT</li>
+        </Link>
+        <Link
+          to="services"
+          duration={500}
+          className="link"
+          smooth={true}
+          spy={true}
+          offset={-62}
+        >
           <li>SERVICES</li>
-        </a>
+        </Link>
         <a href="http://discord.netsoc.co/" target="_blank">
           <li className="discord">DISCORD</li>
         </a>
