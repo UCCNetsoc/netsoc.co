@@ -8,6 +8,8 @@ import {
 import { GITHUB_URL } from '../config';
 import 'react-photoswipe/lib/photoswipe.css';
 import Header from '../components/Header';
+import loader from '../../public/img/loader.svg';
+
 const Root = styled.div`
   margin: 0;
   padding: 0;
@@ -30,9 +32,24 @@ const Root = styled.div`
     right: 0;
     text-align: center;
   }
+  & .pswp__caption__center {
+    text-align: center;
+  }
+  & .loading {
+    width: 60px;
+    position: relative;
+    left: 50%;
+    padding: 20px;
+    margin-left: -30px;
+  }
+  @media screen and (max-width: 850px) {
+    & .pswp-thumbnails {
+      padding: 0;
+    }
+  }
 `;
 const Thumb = styled.img`
-  height: 250px;
+  height: 200px;
   width: auto;
   cursor: pointer;
 `;
@@ -66,7 +83,9 @@ export default function (
             img.download_url.slice(thumbIndex),
           ].join('');
           try {
-            await fetch(thumbnail);
+            if ((await fetch(thumbnail)).status !== 200) {
+              thumbnail = img.download_url;
+            }
           } catch {
             thumbnail = img.download_url;
           }
@@ -91,13 +110,17 @@ export default function (
     <div>
       <Header value="Gallery" color="#111" />
       <Root {...props}>
-        <PhotoSwipeGallery
-          thumbnailContent={getThumbnailContent}
-          isOpen={isOpen}
-          items={items}
-          options={{}}
-          onClose={() => setIsOpen(false)}
-        ></PhotoSwipeGallery>
+        {items.length ? (
+          <PhotoSwipeGallery
+            thumbnailContent={getThumbnailContent}
+            isOpen={isOpen}
+            items={items}
+            options={{ showAnimationDuration: 0, hideAnimationDuration: 0 }}
+            onClose={() => setIsOpen(false)}
+          />
+        ) : (
+          <img className="loading" src={loader} alt="Loading" />
+        )}
       </Root>
     </div>
   );
