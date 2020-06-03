@@ -7,6 +7,7 @@ import News from './News';
 import About from './About';
 import * as Scroll from 'react-scroll';
 import Services from './Services';
+import Gallery from './Gallery';
 
 const Root = styled.div`
   margin: 0;
@@ -38,6 +39,7 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <About />
       <Scroll.Element name="services" />
       <Services />
+      <Gallery />
     </Root>
   );
 }

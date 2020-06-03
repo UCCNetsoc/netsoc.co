@@ -1,6 +1,6 @@
 FROM node:12 as build
 
-ENV API_URL=http://events.netsoc.dev
+ENV API_URL=https://events.netsoc.dev
 
 WORKDIR /app
 
