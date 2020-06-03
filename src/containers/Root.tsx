@@ -39,6 +39,7 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <About />
       <Scroll.Element name="services" />
       <Services />
+      <Scroll.Element name="gallery" />
       <Gallery />
     </Root>
   );

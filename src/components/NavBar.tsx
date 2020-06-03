@@ -152,6 +152,16 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
         >
           <li>SERVICES</li>
         </Link>
+        <Link
+          to="gallery"
+          duration={500}
+          className="link"
+          smooth={true}
+          spy={true}
+          offset={-62}
+        >
+          <li>GALLERY</li>
+        </Link>
         <a href="http://discord.netsoc.co/" target="_blank">
           <li className="discord">DISCORD</li>
         </a>
