@@ -8,6 +8,7 @@ import About from './About';
 import * as Scroll from 'react-scroll';
 import Services from './Services';
 import Gallery from './Gallery';
+import Footer from '../components/Footer';
 
 const Root = styled.div`
   margin: 0;
@@ -41,6 +42,7 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <Services />
       <Scroll.Element name="gallery" />
       <Gallery />
+      <Footer />
     </Root>
   );
 }

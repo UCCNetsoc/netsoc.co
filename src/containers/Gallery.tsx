@@ -93,7 +93,7 @@ export default function (
           let item = {
             src: img.download_url,
             thumbnail,
-            title: img.name.split('.')[0].replace('_', ' '),
+            title: img.name.split('.')[0].split('_').join(' '),
             h: window.outerHeight,
           } as PhotoSwipeGalleryItem;
           tempArray.push(item);
