@@ -19,6 +19,11 @@ const Root = styled.footer`
   & > div {
     border-bottom: 2px solid #2f3338;
     margin: 10px 0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-between;
   }
   & .social {
     color: #fff;
@@ -33,6 +38,19 @@ const Root = styled.footer`
   & > nav {
     display: flex;
     flex-flow: row-reverse;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 400px) {
+    & > nav {
+      margin-top: 50px;
+      justify-content: center;
+    }
+    & .logo {
+      margin-top: -60px;
+      position: relative;
+      left: 0;
+    }
   }
 `;
 
@@ -40,7 +58,25 @@ export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 export default function (props: FooterProps) {
   return (
     <Root {...props}>
-      <div></div>
+      <div>
+        <a
+          className="twitter-timeline"
+          data-width="300"
+          data-height="250"
+          data-dnt="true"
+          data-theme="dark"
+          href="https://twitter.com/UCCNetsoc?ref_src=twsrc%5Etfw"
+        >
+          Tweets by UCCNetsoc
+        </a>
+        <iframe
+          src="https://discordapp.com/widget?id=248421213628530688&theme=dark"
+          width="300"
+          height="250"
+          allowTransparency={true}
+          frameBorder="0"
+        ></iframe>
+      </div>
       <nav>
         <a
           href="https://github.com/UCCNetsoc/"
