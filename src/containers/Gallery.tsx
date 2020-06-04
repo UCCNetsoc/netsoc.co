@@ -23,6 +23,7 @@ const Root = styled.div`
   }
   & .pswp-thumbnail {
     display: inline-block;
+    padding: 0 3px;
   }
   & .pswp img {
     max-width: none;

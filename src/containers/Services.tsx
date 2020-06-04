@@ -47,8 +47,6 @@ export default function (): React.ReactElement {
               the server space to host anything from HTML to Python CGI.
             </p>
           </Box>
-        </div>
-        <div>
           <Box color="transparent" textColor="#fff">
             <Subheader>Free Wordpress hosting</Subheader>
             <p>
