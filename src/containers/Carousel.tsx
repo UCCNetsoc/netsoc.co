@@ -38,9 +38,10 @@ const Logo = styled.img`
 const News = styled.div`
   width: 100%;
   height: 75vh;
+  margin-top: 30px;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
-  padding: 20px 0;
+  padding: 10px 0;
   & .error {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
@@ -56,7 +57,7 @@ const News = styled.div`
   }
   & > h1 {
     margin: 0;
-    margin-top: 5vh;
+    margin-top: 2vh;
     position: relative;
     font-size: 4em;
   }
