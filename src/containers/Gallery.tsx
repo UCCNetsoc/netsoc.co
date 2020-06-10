@@ -13,12 +13,13 @@ import loader from '../../public/img/loader.svg';
 const Root = styled.div`
   margin: 0;
   padding: 0;
+  padding-top: 5px;
   border: 0;
   background: #111;
   border-top: solid 5px #111;
   margin-top: -1px;
   & .pswp-thumbnails {
-    text-align: center;
+    text-align: left;
     padding: 0;
   }
   & .pswp-thumbnail {
@@ -28,6 +29,7 @@ const Root = styled.div`
     height: 250px;
     overflow: hidden;
     object-fit: contain;
+    margin-top: -5px;
   }
   & .pswp img {
     max-width: none;
