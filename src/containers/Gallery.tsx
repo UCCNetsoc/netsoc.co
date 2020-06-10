@@ -19,11 +19,15 @@ const Root = styled.div`
   margin-top: -1px;
   & .pswp-thumbnails {
     text-align: center;
-    padding: 0 10%;
+    padding: 0;
   }
   & .pswp-thumbnail {
     display: inline-block;
-    padding: 0 3px;
+    padding: 0;
+    width: 25%;
+    height: 250px;
+    overflow: hidden;
+    object-fit: contain;
   }
   & .pswp img {
     max-width: none;
@@ -44,15 +48,21 @@ const Root = styled.div`
     margin-left: -30px;
   }
   @media screen and (max-width: 850px) {
-    & .pswp-thumbnails {
-      padding: 0;
+    & .pswp-thumbnail {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    & .pswp-thumbnail {
+      width: 100%;
     }
   }
 `;
 const Thumb = styled.img`
-  height: 200px;
-  width: auto;
   cursor: pointer;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 export interface GalleryProps extends React.HTMLAttributes<HTMLDivElement> {}
