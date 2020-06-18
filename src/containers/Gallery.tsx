@@ -10,7 +10,7 @@ import 'react-photoswipe/lib/photoswipe.css';
 import Header from '../components/Header';
 import loader from '../../public/img/loader.svg';
 
-const Root = styled.div<{offset: number}>`
+const Root = styled.div<{ offs: number }>`
   margin: 0;
   padding: 0;
   padding-top: 5px;
@@ -18,7 +18,8 @@ const Root = styled.div<{offset: number}>`
   background: #111;
   border-top: solid 5px #111;
   margin-top: -1px;
-  margin-bottom: ${param => param.offset}px;
+  height: ${(param) => param.offs}px;
+  overflow: hidden;
   & .pswp-thumbnails {
     text-align: left;
     padding: 0;
@@ -117,13 +118,30 @@ export default function (
       }
     })();
   }, []);
+  const [width, setWidth] = React.useState(window.innerWidth);
+  window.addEventListener('resize', () => setWidth(window.innerWidth));
   const getThumbnailContent = (item: PhotoSwipeGalleryItem) => {
     return <Thumb src={item.thumbnail} onClick={() => setIsOpen(true)} />;
   };
+  const getHeight = (cols: number) =>
+    Math.floor(items?.length / cols) * 250 - 7;
   return (
     <div>
       <Header value="Gallery" color="#111" />
-      <Root {...props} offest={window.innerWidth > 850 ? (items && items.length%4===0 ? 0 : -250): 0} >
+      <Root
+        offs={
+          items &&
+          (width > 850
+            ? items.length % 4 === 0
+              ? -1
+              : getHeight(4)
+            : width > 450
+            ? items.length % 2 === 0
+              ? -1
+              : getHeight(2)
+            : -1)
+        }
+      >
         {items.length ? (
           <PhotoSwipeGallery
             thumbnailContent={getThumbnailContent}

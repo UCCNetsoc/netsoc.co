@@ -41,7 +41,7 @@ const Root = styled.footer`
     flex-wrap: wrap;
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 350px) {
     & > nav {
       margin-top: 50px;
       justify-content: center;
