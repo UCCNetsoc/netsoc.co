@@ -16,6 +16,4 @@ WORKDIR /usr/share/nginx/html
 
 COPY --from=build /app/dist .
 
-COPY nginx.conf /etc/nginx/nginx.conf
-
 LABEL maintainer="netsoc@uccsocieties.ie"
