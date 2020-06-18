@@ -77,7 +77,7 @@ const Root = styled.nav<RootProps>`
     padding: 0 2em;
   }
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 950px) {
     --height: 60px;
     --logoHeight: 20px;
     --fontSize: 1.2em;
@@ -119,6 +119,7 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
           className="link"
           smooth={true}
           spy={true}
+          onClick={() => setOpen(false)}
         >
           <li>HOME</li>
         </Link>
@@ -129,6 +130,7 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
           smooth={true}
           spy={true}
           offset={-62}
+          onClick={() => setOpen(false)}
         >
           <li>NEWS</li>
         </Link>
@@ -139,6 +141,7 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
           smooth={true}
           spy={true}
           offset={-62}
+          onClick={() => setOpen(false)}
         >
           <li>ABOUT</li>
         </Link>
@@ -149,8 +152,20 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
           smooth={true}
           spy={true}
           offset={-62}
+          onClick={() => setOpen(false)}
         >
           <li>SERVICES</li>
+        </Link>
+        <Link
+          to="gallery"
+          duration={500}
+          className="link"
+          smooth={true}
+          spy={true}
+          offset={-62}
+          onClick={() => setOpen(false)}
+        >
+          <li>GALLERY</li>
         </Link>
         <a href="http://discord.netsoc.co/" target="_blank">
           <li className="discord">DISCORD</li>

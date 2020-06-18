@@ -64,6 +64,10 @@ const Root = styled.div<RootProps>`
     & .announce h1 {
       font-size: 36px;
     }
+    & .error {
+      margin-left: 10%;
+      font-size: 0.8em;
+    }
   }
 `;
 

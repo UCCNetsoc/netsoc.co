@@ -36,12 +36,12 @@ const Logo = styled.img`
   display: inline-block;
 `;
 const News = styled.div`
-  margin-top: 7vh;
   width: 100%;
   height: 75vh;
+  margin-top: 30px;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
-  padding: 20px 0;
+  padding: 10px 0;
   & .error {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
@@ -57,6 +57,7 @@ const News = styled.div`
   }
   & > h1 {
     margin: 0;
+    margin-top: 2vh;
     position: relative;
     font-size: 4em;
   }
@@ -95,7 +96,6 @@ const News = styled.div`
     & > h1 {
       font-size: 2em;
     }
-    margin-top: 75px;
     & .event p {
       font-size: 0.7em;
     }
@@ -113,7 +113,6 @@ const News = styled.div`
   }
 
   @media screen and (max-width: 850px) {
-    margin-top: 40px;
     & > h1 {
       font-size: 2em;
     }
