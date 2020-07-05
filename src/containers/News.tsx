@@ -43,7 +43,7 @@ const Root = styled.div<RootProps>`
     margin: 0;
     color: #003e70;
   }
-  & .announce p {
+  & .announce > p {
     font-family: 'Roboto', sans-serif;
     color: #fff;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
@@ -63,7 +63,7 @@ const Root = styled.div<RootProps>`
     & .announce img {
       display: none;
     }
-    & .announce p,
+    & .announce > p,
     & .announce .imgContent {
       width: 90%;
     }
