@@ -8,10 +8,10 @@ import about from '../../public/img/netsoc.jpg';
 export default function (): React.ReactElement {
   return (
     <div>
-      <Header value="About" color="#0CEBD7" />
+      <Header value="About" color="#0CCAF5" />
       <Box
-        color="linear-gradient(180deg,#0CEBD7,#1ab8f4)"
-        textColor="#286962"
+        color="linear-gradient(180deg,#0CCAF5,#00fff3)"
+        textColor="#0c5b6d"
         image={about}
       >
         <p>
@@ -25,10 +25,10 @@ export default function (): React.ReactElement {
           our <a href="https://wiki.netsoc.co">wiki</a>
         </p>
       </Box>
-      <Header value="Gaming" color="#0CCAF5" />
+      <Header value="Gaming" color="#0CEBD7" />
       <Box
-        color="linear-gradient(180deg,#0CCAF5,#6ef48b)"
-        textColor="#0c5b6d"
+        color="linear-gradient(180deg,#0CEBD7,#00ffad)"
+        textColor="#286962"
         image={gaming}
       >
         <p>
