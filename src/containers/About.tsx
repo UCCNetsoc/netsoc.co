@@ -34,7 +34,7 @@ export default function (): React.ReactElement {
         </p>
       </Box>
       <Header value="Tech" color="#007BDE" />
-      <Box color="#007BDE" image={tech}>
+      <Box color="#007BDE" textColor="#012848" image={tech}>
         <p>
           We host weekly tech events, from informative tech talks to
           comprehensive, hands-on tutorials. Got an interest in web dev? Want to

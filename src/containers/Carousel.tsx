@@ -24,7 +24,7 @@ const Root = styled.div<RootProps>`
     position: relative;
     top: 20vh;
     height: 30vh;
-    filter: drop-shadow(0 0 15px black);
+    filter: drop-shadow(rgba(0, 0, 0, 0.5) 0px 0px 15px);
   }
 `;
 

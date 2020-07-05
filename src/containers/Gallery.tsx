@@ -127,7 +127,7 @@ export default function (
     Math.floor(items?.length / cols) * 250 - 7;
   return (
     <div>
-      <Header value="Gallery" color="#111" />
+      <Header value="Gallery" color="#fff" />
       <Root
         offs={
           items &&

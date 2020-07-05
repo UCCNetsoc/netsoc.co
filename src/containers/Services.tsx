@@ -31,7 +31,7 @@ const Container = styled.article`
 export default function (): React.ReactElement {
   return (
     <div>
-      <Header value="Services" color="#252525" />
+      <Header value="Services" color="#fff" />
       <Container>
         <video className="bg" loop autoPlay>
           <source src={Background} type="video/mp4" />

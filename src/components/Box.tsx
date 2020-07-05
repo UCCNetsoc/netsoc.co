@@ -13,11 +13,12 @@ const Root = styled.div<RootProps>`
   overflow: hidden;
   position: relative;
   background-color: ${(props) => props.color};
-  padding-left: ${(props) => (props.padding ? '10%' : '20%')};
+  padding-left: ${(props) => (props.padding ? '10%' : '10%')};
   margin-top: -1px;
   display: flex;
   & p {
     margin: 0;
+    font-size: 1.08em;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     display: block;

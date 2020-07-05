@@ -25,7 +25,7 @@ const Container = styled.article`
   padding: 1em 0;
   & ul {
     margin: 0;
-    padding: 0 20%;
+    padding: 0 10%;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     font-size: 1.2em;
@@ -38,7 +38,7 @@ const Container = styled.article`
   }
   & li {
     list-style: none;
-    padding: 0.3em 0;
+    padding: 0.75em 0;
     border-bottom: 2px #171616 solid;
   }
 `;
@@ -46,7 +46,7 @@ const Container = styled.article`
 export default function (): React.ReactElement {
   return (
     <div>
-      <Header value="Links" color="#252525" />
+      <Header value="Links" color="#fff" />
       <Container>
         <ul>
           {(() => {
