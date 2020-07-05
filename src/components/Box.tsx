@@ -41,6 +41,8 @@ const Root = styled.div<RootProps>`
     right: 0;
     position: absolute;
     bottom: 0;
+    filter: grayscale(100%) contrast(1);
+    mix-blend-mode: multiply;
   }
   @media screen and (max-width: 850px) {
     padding-left: 10%;
