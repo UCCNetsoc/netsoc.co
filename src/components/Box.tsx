@@ -5,6 +5,8 @@ interface RootProps {
   color: string;
   textColor?: string;
   padding?: boolean;
+  image?: string;
+  offsetColor?: string;
 }
 const Root = styled.div<RootProps>`
   color: ${(props) => props.textColor ?? '#fff'};
@@ -35,14 +37,23 @@ const Root = styled.div<RootProps>`
   & a:hover {
     text-decoration: underline;
   }
-  & > img {
+  & > .image {
     width: 30%;
+    height: 100%;
     float: right;
     right: 0;
     position: absolute;
     bottom: 0;
     filter: grayscale(100%) contrast(1);
     mix-blend-mode: multiply;
+    background-image: linear-gradient(
+        -90deg,
+        transparent,
+        ${(props) => props.offsetColor}
+      ),
+      url(${(props) => props.image});
+    background-size: 100%;
+    background-position-y: bottom;
   }
   @media screen and (max-width: 850px) {
     padding-left: 10%;
@@ -50,8 +61,10 @@ const Root = styled.div<RootProps>`
     & p {
       width: 90%;
     }
-    & > img {
+    & > .image {
+      background-image: url(${(props) => props.image});
       float: none;
+      height: 300px;
       position: static;
       width: 130%;
       margin-left: -15%;
@@ -62,6 +75,7 @@ const Root = styled.div<RootProps>`
 export interface BoxProps extends RootProps {
   children?: Array<React.ReactText | JSX.Element> | JSX.Element;
   image?: string;
+  offsetColor?: string;
 }
 export default function (props: BoxProps): React.ReactElement<BoxProps> {
   return (
@@ -69,9 +83,11 @@ export default function (props: BoxProps): React.ReactElement<BoxProps> {
       color={props.color}
       textColor={props.textColor}
       padding={props.padding}
+      image={props.image}
+      offsetColor={props.offsetColor}
     >
       <section>{props.children}</section>
-      {props.image && <img src={props.image} alt="Image" />}
+      {props.image && <div className="image"></div>}
     </Root>
   );
 }

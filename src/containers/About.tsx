@@ -11,6 +11,7 @@ export default function (): React.ReactElement {
       <Header value="About" color="#0CCAF5" />
       <Box
         color="linear-gradient(180deg,#0CCAF5,#00fff3)"
+        offsetColor="#0CCAF5"
         textColor="#0c5b6d"
         image={about}
       >
@@ -28,6 +29,7 @@ export default function (): React.ReactElement {
       <Header value="Gaming" color="#0CEBD7" />
       <Box
         color="linear-gradient(180deg,#0CEBD7,#00ffad)"
+        offsetColor="#0CEBD7"
         textColor="#286962"
         image={gaming}
       >
@@ -45,6 +47,7 @@ export default function (): React.ReactElement {
       <Box
         color="linear-gradient(180deg,#007BDE,#da80ff)"
         textColor="#012848"
+        offsetColor="#007BDE"
         image={tech}
       >
         <p>
