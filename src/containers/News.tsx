@@ -1,7 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import loader from '../../public/img/loader.svg';
+import { Converter } from 'showdown';
 import { API_URL } from '../config';
+
+const converter = new Converter({});
 
 interface RootProps {}
 const Root = styled.div<RootProps>`
@@ -120,15 +123,17 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
                 const da = new Intl.DateTimeFormat('en', {
                   day: '2-digit',
                 }).format(date);
+                const str = converter.makeHtml(announce.content);
                 const element = (
                   <div key={announce.date} className="announce">
                     {announce.image_url && (
                       <img src={announce.image_url} alt="" />
                     )}
                     <h1>{`${da} ${mo} ${ye}`}</h1>
-                    <p className={announce.image_url && 'imgContent'}>
-                      {announce.content}
-                    </p>
+                    <p
+                      className={announce.image_url && 'imgContent'}
+                      dangerouslySetInnerHTML={{ __html: str }}
+                    ></p>
                   </div>
                 );
                 output.push(element);

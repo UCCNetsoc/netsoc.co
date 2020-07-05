@@ -36,10 +36,10 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <Scroll.Element name="news" />
       <Header value="News" color="#007BDE" />
       <News />
-      <Scroll.Element name="about" />
-      <About />
       <Scroll.Element name="services" />
       <Services />
+      <Scroll.Element name="about" />
+      <About />
       <Scroll.Element name="gallery" />
       <Gallery />
       <Footer />
