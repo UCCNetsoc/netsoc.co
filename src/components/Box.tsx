@@ -29,6 +29,7 @@ const Root = styled.div<RootProps>`
   }
   & a {
     font-weight: bold;
+    color: ${(props) => props.textColor ?? '#fff'};
   }
   & a:hover {
     text-decoration: underline;
@@ -38,6 +39,7 @@ const Root = styled.div<RootProps>`
     float: right;
     right: 0;
     position: absolute;
+    bottom: 0;
   }
   @media screen and (max-width: 850px) {
     padding-left: 10%;

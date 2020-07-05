@@ -46,6 +46,12 @@ const News = styled.div`
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   padding: 10px 0;
+  & a:hover {
+    color: #0cebd7;
+  }
+  & a {
+    transition: all 0.3s;
+  }
   & .error {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;

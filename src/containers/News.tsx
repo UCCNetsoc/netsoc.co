@@ -16,6 +16,12 @@ const Root = styled.div<RootProps>`
     margin-top: 30px;
     margin-bottom: 30px;
   }
+  & a:hover {
+    color: #0cebd7;
+  }
+  & a {
+    transition: all 0.3s;
+  }
   & .error {
     font-family: 'Lato', sans-serif;
     color: #fff;

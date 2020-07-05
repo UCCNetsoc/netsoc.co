@@ -38,6 +38,19 @@ export default function (): React.ReactElement {
         </video>
         <div>
           <Box color="transparent" textColor="#fff">
+            <Subheader>Free netsoc.co domain</Subheader>
+            <p>
+              When you sign up to our services via{' '}
+              <a href="http://admin.netsoc.co/"> Netsoc Admin</a> you'll a free{' '}
+              <i>username.netsoc.co</i> domain that points to your website or
+              blog.
+            </p>
+            <p>
+              If you'd rather a custom domain, you can register one and follow
+              the steps on Netsoc Admin to get it to point to your website.
+            </p>
+          </Box>
+          <Box color="transparent" textColor="#fff">
             <Subheader>Free Server Space</Subheader>
             <p>
               Netsoc provide free hosting services available to all UCC students
