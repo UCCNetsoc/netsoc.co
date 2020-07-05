@@ -26,11 +26,11 @@ const Root = styled.div<RootProps>`
     font-family: 'Lato', sans-serif;
     color: #fff;
     font-size: 1.5em;
-    margin-left: 20%;
+    margin-left: 10%;
     line-height: 100px;
   }
   & .announce {
-    margin-left: 20%;
+    margin-left: 10%;
     border-top: solid 5px #003e7073;
     overflow: hidden;
     position: relative;
@@ -47,7 +47,7 @@ const Root = styled.div<RootProps>`
     font-family: 'Roboto', sans-serif;
     color: #fff;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-    width: 60%;
+    width: 80%;
     text-overflow: wrap;
   }
   & .announce .imgContent {
