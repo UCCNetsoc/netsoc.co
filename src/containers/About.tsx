@@ -3,13 +3,17 @@ import Box from '../components/Box';
 import Header from '../components/Header';
 import gaming from '../../public/img/gaming.jpg';
 import tech from '../../public/img/tech.jpg';
-import about from '../../public/img/netsoc.png';
+import about from '../../public/img/netsoc.jpg';
 
 export default function (): React.ReactElement {
   return (
     <div>
       <Header value="About" color="#0CEBD7" />
-      <Box color="#0CEBD7" textColor="#286962" image={about}>
+      <Box
+        color="linear-gradient(180deg,#0CEBD7,#1ab8f4)"
+        textColor="#286962"
+        image={about}
+      >
         <p>
           A member of the Irish Intersocs Community, UCC Netsoc (the Networking,
           Gaming and Technology Society) runs a digital services network and
@@ -22,7 +26,11 @@ export default function (): React.ReactElement {
         </p>
       </Box>
       <Header value="Gaming" color="#0CCAF5" />
-      <Box color="#0CCAF5" textColor="#0c5b6d" image={gaming}>
+      <Box
+        color="linear-gradient(180deg,#0CCAF5,#6ef48b)"
+        textColor="#0c5b6d"
+        image={gaming}
+      >
         <p>
           Every Tuesday is Gaming Night at Netsoc. We host many events such as
           General Gaming, Tournaments and many others!
@@ -34,7 +42,11 @@ export default function (): React.ReactElement {
         </p>
       </Box>
       <Header value="Tech" color="#007BDE" />
-      <Box color="#007BDE" textColor="#012848" image={tech}>
+      <Box
+        color="linear-gradient(180deg,#007BDE,#da80ff)"
+        textColor="#012848"
+        image={tech}
+      >
         <p>
           We host weekly tech events, from informative tech talks to
           comprehensive, hands-on tutorials. Got an interest in web dev? Want to

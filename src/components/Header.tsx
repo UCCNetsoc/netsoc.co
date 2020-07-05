@@ -6,7 +6,7 @@ interface RootProps {
 }
 const Root = styled.div<RootProps>`
   background: rgb(33, 33, 33);
-  height: 56px;
+  height: 66px;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -17,7 +17,7 @@ const Root = styled.div<RootProps>`
     font-family: 'Lato', sans-serif;
     color: ${(props) => props.color};
     margin-left: 10%;
-    font-size: 46px;
+    font-size: 56px;
     display: block;
     position: relative;
     top: 10px;

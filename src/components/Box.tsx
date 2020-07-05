@@ -12,7 +12,7 @@ const Root = styled.div<RootProps>`
   padding: 0;
   overflow: hidden;
   position: relative;
-  background-color: ${(props) => props.color};
+  background: ${(props) => props.color};
   padding-left: ${(props) => (props.padding ? '10%' : '10%')};
   margin-top: -1px;
   display: flex;
