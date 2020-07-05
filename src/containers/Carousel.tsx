@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import imgMain from '../../public/img/1.jpg';
 import logo from '../../public/img/logo.svg';
 import loader from '../../public/img/loader.svg';
+import { Converter } from 'showdown';
 import { API_URL } from '../config';
+
+const converter = new Converter({ simplifiedAutoLink: true });
 
 interface RootProps {}
 const Root = styled.div<RootProps>`
@@ -98,7 +101,7 @@ const News = styled.div`
       font-size: 2em;
     }
     & .event p {
-      font-size: 0.7em;
+      font-size: 0.85em;
     }
     & .event h1 {
       font-size: 1em;
@@ -124,7 +127,7 @@ const News = styled.div`
       font-size: 0.7em;
     }
     & .event p {
-      font-size: 0.7em;
+      font-size: 0.85em;
     }
     & .eventContainer {
       flex-direction: column;
@@ -134,7 +137,7 @@ const News = styled.div`
     & .event {
       max-width: 60%;
     }
-    & .event:last-child {
+    & .event:nth-child(2) {
       display: none;
     }
   }
@@ -206,7 +209,11 @@ export default function (
                               date.getFullYear()}
                           </h2>
                           <img src={event.image_url} alt="" />
-                          <p>{event.description}</p>
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: converter.makeHtml(event.description),
+                            }}
+                          ></p>
                         </div>
                       );
                       output.push(element);

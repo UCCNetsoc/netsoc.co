@@ -4,7 +4,7 @@ import loader from '../../public/img/loader.svg';
 import { Converter } from 'showdown';
 import { API_URL } from '../config';
 
-const converter = new Converter({});
+const converter = new Converter({ simplifiedAutoLink: true });
 
 interface RootProps {}
 const Root = styled.div<RootProps>`
