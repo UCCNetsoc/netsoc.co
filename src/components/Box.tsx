@@ -38,7 +38,7 @@ const Root = styled.div<RootProps>`
     text-decoration: underline;
   }
   & > .image {
-    width: 40%;
+    width: 50%;
     height: 100%;
     float: right;
     opacity: 0.6;
