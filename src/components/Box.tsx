@@ -66,7 +66,7 @@ const Root = styled.div<RootProps>`
     & > .image {
       background-image: url(${(props) => props.image});
       float: none;
-      height: 300px;
+      height: 200px;
       position: static;
       width: 130%;
       margin-left: -15%;
