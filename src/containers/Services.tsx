@@ -41,7 +41,7 @@ export default function (): React.ReactElement {
             <Subheader>Free netsoc.co domain</Subheader>
             <p>
               When you sign up to our services via{' '}
-              <a href="http://admin.netsoc.co/"> Netsoc Admin</a> you'll a free{' '}
+              <a href="http://admin.netsoc.co/"> Netsoc Admin</a> you'll get a free{' '}
               <i>username.netsoc.co</i> domain that points to your website or
               blog.
             </p>

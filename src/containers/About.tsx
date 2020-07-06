@@ -22,8 +22,8 @@ export default function (): React.ReactElement {
           gaming and social events.
         </p>
         <p>
-          For more in depth information on our society and how it runs, visit
-          our <a href="https://wiki.netsoc.co">wiki</a>
+          For more in-depth information on our society and how it runs, visit
+          our <a href="https://wiki.netsoc.co">wiki</a>.
         </p>
       </Box>
       <Header value="Gaming" color="#0CEBD7" />
@@ -34,13 +34,18 @@ export default function (): React.ReactElement {
         image={gaming}
       >
         <p>
-          Every Tuesday is Gaming Night at Netsoc. We host many events such as
-          General Gaming, Tournaments and many others!
+          Every Tuesday is Gaming Night at Netsoc. We host a variety of gaming events, from VR competitions to 
+          LAN nights. Our General Gaming events are a great way to enjoy casual gaming, try out the latest games and make new friends.
         </p>
         <p>
-          We are also a member of the Irish Collegiate Esports. We have our own
-          esports team called the 'Netsoc Rebels' who compete in games such as
-          CS:GO, Overwatch, Rainbow Six Siege and League of Legends.
+          We are also a member of the Irish Collegiate Esports. Our eSports team, the Netsoc Rebels, compete in games such as 
+          CS:GO, Overwatch, Rainbow Six Siege and League of Legends. Be sure to join our Discord server to 
+          keep up-to-date with all the latest news.
+        </p>
+        
+        <p>
+          Joining our eSports team is a great way to get involved with competitive gaming, 
+          so if you’d like to get started, don’t hesitate to join our Discord server where we can answer all your questions. 
         </p>
       </Box>
       <Header value="Tech" color="#007BDE" />
@@ -54,18 +59,27 @@ export default function (): React.ReactElement {
           We host weekly tech events, from informative tech talks to
           comprehensive, hands-on tutorials. Got an interest in web dev? Want to
           gain more insight into the technologies that power our lives? You're
-          sure to enjoy our tech talks!
+          sure to enjoy our tech talks! From giving comprehensive tutorials on how to start your own website, 
+          to in-depth reverse engineering techniques, there's sure to be a tech event that interests you.
         </p>
         <p>
           Tech talks are a great way to showcase what you're passionate about.
           If you'd like to host one, feel free to let us know and we'd be more
           than happy to host you!
         </p>
+
         <p>
-          As well as that, we've brought students to CIX, Cork's very own
-          datacentre, took them to FOSDEM, a yearly developer's conference in
-          Brussels, and even had cool nights out in Barcadia.
+          We’ve also hosted a variety of hackathons, where members have competed in teams or individually by creating new websites, 
+          games, and programs, with the opportunity to showcase their work to others, and win prizes. 
+          Google Hashcode, an annual programming competition where we host our own annual hub, has also been a fond favourite.
         </p>
+
+        <p>
+          As well as that, we've brought students to CIX, Cork's very own datacentre, took them to FOSDEM,
+          an annual developer's conference in Brussels, and also attended SISTEM in Dublin, which is a yearly conference for tech students.
+          These events are sure to be remembered by all!
+        </p>
+
       </Box>
     </div>
   );
