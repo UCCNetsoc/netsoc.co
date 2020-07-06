@@ -20,6 +20,7 @@ const Root = styled.div<RootProps>`
   display: flex;
   & p {
     margin: 0;
+    z-index: 1;
     font-size: 1.08em;
     padding: 0;
     font-family: 'Roboto', sans-serif;
