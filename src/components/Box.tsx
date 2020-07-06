@@ -38,14 +38,16 @@ const Root = styled.div<RootProps>`
     text-decoration: underline;
   }
   & > .image {
-    width: 30%;
+    width: 40%;
     height: 100%;
     float: right;
+    opacity: 0.6;
     right: 0;
     position: absolute;
     bottom: 0;
     filter: grayscale(100%) contrast(1);
-    mix-blend-mode: multiply;
+    box-shadow: 0 0 50px 50px ${(props) => props.offsetColor};
+    mix-blend-mode: luminosity;
     background-image: linear-gradient(
         -90deg,
         transparent,
