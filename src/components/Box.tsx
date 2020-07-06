@@ -55,7 +55,7 @@ const Root = styled.div<RootProps>`
       ),
       url(${(props) => props.image});
     background-size: 100%;
-    background-position-y: bottom;
+    background-position-y: 70%;
   }
   @media screen and (max-width: 850px) {
     padding-left: 10%;
