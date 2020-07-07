@@ -38,7 +38,7 @@ export default function (): React.ReactElement {
         </video>
         <div>
           <Box color="transparent" textColor="#fff">
-            <Subheader>Free netsoc.co domain</Subheader>
+            <Subheader>Free netsoc.co Domain</Subheader>
             <p>
               When you sign up to our services via{' '}
               <a href="http://admin.netsoc.co/"> Netsoc Admin</a> you'll get a free{' '}
@@ -53,7 +53,7 @@ export default function (): React.ReactElement {
           <Box color="transparent" textColor="#fff">
             <Subheader>Free Server Space</Subheader>
             <p>
-              Netsoc provide free hosting services available to all UCC students
+              Netsoc provides free hosting services available to all UCC students
               and societies. If you'd like to avail of these services, feel free
               to try them out via{' '}
               <a href="http://admin.netsoc.co/"> Netsoc Admin</a>. You can use
@@ -61,17 +61,17 @@ export default function (): React.ReactElement {
             </p>
           </Box>
           <Box color="transparent" textColor="#fff">
-            <Subheader>Free Wordpress hosting</Subheader>
+            <Subheader>Free WordPress Hosting</Subheader>
             <p>
-              Netsoc provides free WordPress hosting which is available to all
-              UCC students.
+              In addition to our free hosting services, Netsoc also makes it easy to set up your 
+              own WordPress website, available to all UCC students and societies.
             </p>
             <p>
               WordPress is a free and open-source content management system that
-              allows you to post and manage your content with ease. Whether its
-              a blog or a portfolio, it can be managed with WordPress. Go to
-              <a href="http://admin.netsoc.co/"> Netsoc Admin</a> to signup for
-              free wordpress hosting.
+              allows you to post and manage your content with ease. Whether it's
+              a blog or a portfolio, it can be managed with WordPress. To signup for your free
+              WordPress hosting, just go to
+              <a href="http://admin.netsoc.co/"> Netsoc Admin</a> and create your account.
             </p>
           </Box>
         </div>
