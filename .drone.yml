@@ -8,7 +8,7 @@ steps:
       tags:
         - 'dev-env_${DRONE_COMMIT_SHA:0:7}'
         - dev-env
-      repo: docker.netsoc.co/public/netsoc.co
+      repo: uccnetsoc/netsoc.co
       target: dev
       registry: docker.netsoc.co
       username:
@@ -28,7 +28,7 @@ steps:
         - '${DRONE_COMMIT_SHA:0:7}'
         - new
         - latest
-      repo: docker.netsoc.co/public/netsoc.co
+      repo: uccnetsoc/netsoc.co
       registry: docker.netsoc.co
       username:
         from_secret: registry_pub_user
