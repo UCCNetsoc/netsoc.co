@@ -41,7 +41,7 @@ const Logo = styled.img`
 `;
 const News = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 77vh;
   margin-top: 30px;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
@@ -204,7 +204,7 @@ export default function (
   return (
     <Root>
       <Background src={imgMain} alt="" />
-      <div style={{ marginTop: '-80vh', textAlign: 'center' }}>
+      <div style={{ marginTop: '-81vh', textAlign: 'center' }}>
         {loading ? (
           <img className="loading" src={loader} alt="Loading" />
         ) : error === 'logo' ? (

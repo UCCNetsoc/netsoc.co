@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '../components/Box';
 import Header from '../components/Header';
 import styled from 'styled-components';
-import Background from '../../public/switch.jpg';
+import Background from '../../public/servers.mp4';
 import AdminLogo from '../../public/img/admin-logo.svg';
 
 const Subheader = styled.h1`
@@ -13,8 +13,6 @@ const Subheader = styled.h1`
 `;
 const Container = styled.article`
   border-bottom: 5px solid #252525;
-  background-image: url(${Background});
-  background-repeat: no-repeat;
   border-top: 5px solid #252525;
   margin-top: -1px;
   display: flex;
@@ -38,13 +36,12 @@ const Container = styled.article`
 
   overflow: hidden;
   & .bg {
-    object-fit: cover;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25) inset;
-    position: absolute;
-    margin: -160px auto 0 auto;
+    position: fixed;
+    right: 0;
+    bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: -1;
+    z-index: -1000;
   }
   z-index: 2;
 `;
@@ -63,6 +60,9 @@ export default function (): React.ReactElement {
     <div>
       <Header value="Member Services" color="#fff" />
       <Container>
+        <video className="bg" loop autoPlay>
+          <source src={Background} type="video/mp4" />
+        </video>
         <div
           style={{
             display: 'grid',
