@@ -1,4 +1,4 @@
-FROM node:12 as build
+FROM node:12 as dev
 
 ENV API_URL=https://events.netsoc.dev
 
@@ -8,7 +8,7 @@ COPY . .
 
 RUN npm install && npm rebuild && npm run build
 
-FROM nginx:latest
+FROM nginx:latest as prod
 
 RUN ln -s /app /usr/share/nginx/html
 
