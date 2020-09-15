@@ -12,9 +12,9 @@ steps:
       target: dev
       registry: docker.netsoc.co
       username:
-        from_secret: registry_pub_user
+        from_secret: docker_hub_user
       password:
-        from_secret: registry_pub_token
+        from_secret: docker_hub_token
     when:
       event:
         - push
@@ -31,9 +31,9 @@ steps:
       repo: uccnetsoc/netsoc.co
       registry: docker.netsoc.co
       username:
-        from_secret: registry_pub_user
+        from_secret: docker_hub_user
       password:
-        from_secret: registry_pub_token
+        from_secret: docker_hub_token
     when:
       event:
         - push
@@ -95,14 +95,21 @@ get:
 
 ---
 kind: secret
-name: registry_pub_user
+name: docker_hub_user
 get:
-  path: docker_registry/harbor
-  name: harbor_pub_user
+  path: docker_registry/docker_hub
+  name: docker_hub_user
 
 ---
 kind: secret
-name: registry_pub_token
+name: docker_hub_token
 get:
-  path: docker_registry/harbor
-  name: harbor_pub_token
+  path: docker_registry/docker_hub
+  name: docker_hub_token
+
+---
+kind: secret
+name: github_token
+get:
+  path: github/personal_access_tokens
+  name: public_repo_token
