@@ -22,11 +22,12 @@ const Container = styled.article`
   display: flex;
   background: #252525;
   border-top: 5px solid #252525;
-  margin-top: -1px;
+  width: min-content;
+  margin-left: 8%;
   padding: 1em 0;
   & ul {
     margin: 0;
-    padding: 0 10%;
+    width: 250px;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     font-size: 1.2em;
@@ -40,7 +41,18 @@ const Container = styled.article`
   & li {
     list-style: none;
     padding: 0.75em 0;
-    border-bottom: 1px rgba(233,233,233,0.4) solid;
+    border-bottom: 1px rgba(233, 233, 233, 0.4) solid;
+  }
+  @media screen and (max-width: 1300px) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 480px) {
+    & ul {
+      width: 100%;
+    }
   }
 `;
 
@@ -59,70 +71,87 @@ const SocialWrap = styled.section`
     border-radius: 8px !important;
     left: -2em;
   }
-`
+  @media screen and (max-width: 1300px) {
+    padding-top: 10px;
+    & .fb-page {
+      display: none;
+    }
+    & .twitter-timeline {
+      display: none !important;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    & * {
+      display: none !important;
+    }
+  }
+`;
 
 export default function (): React.ReactElement {
   return (
-      <div>
-        <Header value="Links / Social" color="#fff" />
-        <Container>
-          <ul>
-            {(() => {
-              const output: JSX.Element[] = [];
-              for (let link of links) {
-                output.push(
-                  <li key={link.url}>
-                    <a href={link.url} target="_blank">
-                      {link.name}
-                    </a>
-                  </li>
-                );
-              }
-              return output;
-            })()}
-          </ul>
-          <SocialWrap>
-            <div>
-              <iframe
-                src="https://discordapp.com/widget?id=248421213628530688&theme=dark"
-                width="300"
-                height="250"
-                allowTransparency={true}
-                frameBorder="0"
-              ></iframe>
-            </div>
-            <div>
-              <a
-                className="twitter-timeline"
-                data-width="300"
-                data-height="250"
-                data-dnt="true"
-                data-theme="dark"
-                href="https://twitter.com/UCCNetsoc?ref_src=twsrc%5Etfw"
-              >
-                Tweets by UCCNetsoc
-              </a>
-            </div>
+    <div style={{ background: '#252525' }}>
+      <Header value="Links / Social" color="#fff" />
+      <Container>
+        <ul>
+          {(() => {
+            const output: JSX.Element[] = [];
+            for (let link of links) {
+              output.push(
+                <li key={link.url}>
+                  <a href={link.url} target="_blank">
+                    {link.name}
+                  </a>
+                </li>
+              );
+            }
+            return output;
+          })()}
+        </ul>
+        <SocialWrap>
+          <div>
+            <iframe
+              src="https://discordapp.com/widget?id=248421213628530688&theme=dark"
+              width="300"
+              height="250"
+              allowTransparency={true}
+              frameBorder="0"
+            ></iframe>
+          </div>
+          <div>
+            <a
+              className="twitter-timeline"
+              data-width="300"
+              data-height="250"
+              data-dnt="true"
+              data-theme="dark"
+              href="https://twitter.com/UCCNetsoc?ref_src=twsrc%5Etfw"
+            >
+              Tweets by UCCNetsoc
+            </a>
+          </div>
 
-            <div>
-              <div
-                className="fb-page"
-                data-href="https://www.facebook.com/NetsocUCC"
-                data-tabs="timeline"
-                data-width=""
-                data-height=""
-                data-small-header="false"
-                data-adapt-container-width="true"
-                data-hide-cover="false"
-                data-show-facepile="true"
+          <div>
+            <div
+              className="fb-page"
+              data-href="https://www.facebook.com/NetsocUCC"
+              data-tabs="timeline"
+              data-width="250"
+              data-height=""
+              data-small-header="false"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            >
+              <blockquote
+                cite="https://www.facebook.com/NetsocUCC"
+                className="fb-xfbml-parse-ignore"
               >
-                  <blockquote cite="https://www.facebook.com/NetsocUCC" className="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/NetsocUCC">UCC Netsoc</a>
-                  </blockquote>
-              </div>
+                <a href="https://www.facebook.com/NetsocUCC">UCC Netsoc</a>
+              </blockquote>
             </div>
-          </SocialWrap>
-        </Container>
-      </div>
+          </div>
+        </SocialWrap>
+      </Container>
+    </div>
   );
 }

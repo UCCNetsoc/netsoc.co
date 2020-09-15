@@ -44,16 +44,9 @@ const Container = styled.article`
     z-index: -1000;
   }
   z-index: 2;
+  @media screen and (max-height: 950px) {
+  }
 `;
-
-// <div>
-// <figure>
-//   <img width="240" src={AdminLogo}/>
-// </figure>
-// <h1>
-//   <a href="https://admin.netsoc.co">Sign Up</a>
-// </h1>
-// </div>
 
 export default function (): React.ReactElement {
   return (
@@ -124,7 +117,10 @@ export default function (): React.ReactElement {
               </p>
             </Box>
           </div>
-          <div style={{ justifySelf: 'center', alignSelf: 'center' }}>
+          <div
+            className="admin"
+            style={{ justifySelf: 'center', alignSelf: 'center' }}
+          >
             <div style={{ width: '50vh' }}>
               <div style={{ textAlign: 'center' }}>
                 <img width="320" src={AdminLogo} />
