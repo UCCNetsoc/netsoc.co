@@ -8,13 +8,15 @@ import instagram from '../../public/img/social/instagram.svg';
 
 const Root = styled.footer`
   background: #353a40;
-  padding: 10px 50px;
+  padding: 16px 64px;
   color: #fff;
   & .logo {
-    height: 18px;
+    margin-top: 4px;
+    height: 24px;
     flex-grow: 1;
     position: absolute;
-    left: 55px;
+    left: 10%;
+    opacity: 0.8;
   }
   & > div {
     border-bottom: 2px solid #2f3338;
@@ -27,7 +29,8 @@ const Root = styled.footer`
   }
   & .social {
     color: #fff;
-    width: 25px;
+    width: 24px;
+    margin-top: 4px;
     margin-right: 5px;
     filter: invert(100%);
     transition: all 0.3s;
@@ -58,25 +61,6 @@ export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 export default function (props: FooterProps) {
   return (
     <Root {...props}>
-      <div>
-        <a
-          className="twitter-timeline"
-          data-width="300"
-          data-height="250"
-          data-dnt="true"
-          data-theme="dark"
-          href="https://twitter.com/UCCNetsoc?ref_src=twsrc%5Etfw"
-        >
-          Tweets by UCCNetsoc
-        </a>
-        <iframe
-          src="https://discordapp.com/widget?id=248421213628530688&theme=dark"
-          width="300"
-          height="250"
-          allowTransparency={true}
-          frameBorder="0"
-        ></iframe>
-      </div>
       <nav>
         <a
           href="https://github.com/UCCNetsoc/"

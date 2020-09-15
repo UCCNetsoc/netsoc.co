@@ -29,7 +29,7 @@ const Root = styled.div<RootProps>`
     margin-top: 30px;
     margin-bottom: 30px;
     width: ${(props) => (props.padding ? '80%' : '50%')};
-    /* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+    text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
   }
   & a {
     font-weight: bold;
