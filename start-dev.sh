@@ -9,5 +9,16 @@ if [ ! -d "./node_modules" ]; then
     npm install
 fi
 
+WD=`pwd`
 cd $1
+
+if [ ! -f "./website/docker-compose.override.yml" ]; then
+	echo "version: \"3.7\" 
+services:
+  website:
+    volumes:
+      - ${WD}:/app
+" > ./website/docker-compose.override.yml
+fi
+
 bash -c "./dev-env up website discord-bot"

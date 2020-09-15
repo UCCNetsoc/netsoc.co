@@ -101,13 +101,31 @@ const News = styled.div`
   & .event p {
     font-size: 0.95em;
   }
+  & .event > p {
+    height: 17vh;
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
 
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #ffffff56;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #fff;
+    }
+  }
   @media screen and (max-height: 800px) {
     & > h1 {
       font-size: 2em;
-    }
-    & .event p {
-      font-size: 0.85em;
     }
     & .event h1 {
       font-size: 1em;
@@ -119,6 +137,9 @@ const News = styled.div`
       width: 75%;
       margin-top: 1em;
       border-radius: 0.3em;
+    }
+    & .event > p {
+      height: 20vh;
     }
   }
 
@@ -133,7 +154,7 @@ const News = styled.div`
       font-size: 0.7em;
     }
     & .event p {
-      font-size: 0.85em;
+      font-size: 0.9em;
     }
     & .eventContainer {
       flex-direction: column;
