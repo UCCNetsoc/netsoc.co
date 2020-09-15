@@ -8,7 +8,7 @@ Our new fancy website. Made with React and Typescript.
 
 1. Ensure you have the prerequisits: Node.js, NPM, Docker and docker-compose
 
-1. Pull the repo
+1. Pull this repo
 1. Pull the [dev-env](https://github.com/UCCNetsoc/dev-env) into another directory
 1. `cd` into this repo and run `./start-dev.sh /path/to/dev-env`
 
