@@ -1,15 +1,15 @@
-# [netsoc.co/rk](https://netsoc.co/rk)
-[![](https://ci.netsoc.co/api/badges/uccnetsoc/netsoc.co/status.svg)](https://ci.netsoc.co/UCCNetsoc/netsoc.co/)
+# [![](https://raw.githubusercontent.com/UCCNetsoc/wiki/master/assets/logo-horizontal-inverted.svg)](https://netsoc.co/rk)
 
+[![](https://ci.netsoc.dev/api/badges/uccnetsoc/netsoc.co/status.svg)](https://ci.netsoc.dev/UCCNetsoc/netsoc.co/)
 
-Our new fancy website.
+Our new fancy website. Made with React and Typescript.
 
 ## Local development
-- Prerequisits: Node.js and NPM
-- After cloning the repo, run `npm i` in the base directory.
-- To start the website, run `npm start`.
-- If you wish to hook it up to the events api, you can do either:
-  1. Set the API_URL environment variable to `https://events.netsoc.dev` before you run `npm start`
-  2. Download the [dev-env](https://github.com/UCCNetsoc/dev-env) and run the discord bot with `./dev-env up discord-bot consul`
+
+1. Ensure you have the prerequisits: Node.js, NPM, Docker and docker-compose
+
+1. Pull the repo
+1. Pull the [dev-env](https://github.com/UCCNetsoc/dev-env) into another directory
+1. `cd` into this repo and run `./start-dev.sh /path/to/dev-env`
 
 Thanks for contributing :)
