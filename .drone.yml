@@ -10,7 +10,7 @@ steps:
         - dev-env
       repo: uccnetsoc/netsoc.co
       target: dev
-      registry: docker.netsoc.co
+      registry: docker.io
       username:
         from_secret: docker_hub_user
       password:
@@ -29,7 +29,7 @@ steps:
         - new
         - latest
       repo: uccnetsoc/netsoc.co
-      registry: docker.netsoc.co
+      registry: docker.io
       username:
         from_secret: docker_hub_user
       password:
