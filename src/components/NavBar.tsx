@@ -14,6 +14,7 @@ const Root = styled.nav<RootProps>`
   --fontSize: 1.5em;
   position: fixed;
   font-family: 'Bebas Neue', sans-serif;
+  font-weight: 200;
   padding: 0 2em;
   padding-right: 0;
   display: flex;

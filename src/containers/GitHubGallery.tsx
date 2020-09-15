@@ -5,7 +5,7 @@ import {
   PhotoSwipeGallery,
   PhotoSwipeGalleryItem,
 } from 'react-photoswipe';
-import { GITHUB_URL } from '../config';
+
 import 'react-photoswipe/lib/photoswipe.css';
 import Header from '../components/Header';
 import loader from '../../public/img/loader.svg';
@@ -69,7 +69,11 @@ const Thumb = styled.img`
   height: 100%;
 `;
 
-export interface GalleryProps extends React.HTMLAttributes<HTMLDivElement> {}
+export interface GalleryProps extends React.HTMLAttributes<HTMLDivElement> {
+  title: string
+  source: string
+}
+
 export default function (
   props: GalleryProps
 ): React.ReactElement<GalleryProps> {
@@ -78,7 +82,7 @@ export default function (
   React.useEffect(() => {
     (async () => {
       try {
-        const response = (await (await fetch(GITHUB_URL)).json()) as {
+        const response = (await (await fetch(props.source)).json()) as {
           name: string;
           download_url: string;
           type: string;
@@ -127,7 +131,7 @@ export default function (
     Math.floor(items?.length / cols) * 250 - 7;
   return (
     <div>
-      <Header value="Gallery" color="#fff" />
+      <Header value={props.title} color="#fff" />
       <Root
         offs={
           items &&

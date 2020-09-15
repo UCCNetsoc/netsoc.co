@@ -7,9 +7,11 @@ import News from './News';
 import About from './About';
 import * as Scroll from 'react-scroll';
 import Services from './Services';
-import Gallery from './Gallery';
+import GitHubGallery from './GitHubGallery';
 import Footer from '../components/Footer';
-import Links from './Links';
+import LinksSocial from './LinksSocial';
+
+import { GITHUB_GALLERY_URL, GITHUB_PAST_EVENTS_GALLERY_URL } from '../config';
 
 const Root = styled.div`
   margin: 0;
@@ -42,8 +44,9 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <Scroll.Element name="services" />
       <Services />
       <Scroll.Element name="gallery" />
-      <Gallery />
-      <Links />
+      <GitHubGallery title="GALLERY" source={GITHUB_GALLERY_URL}/>
+      <GitHubGallery title="PAST EVENTS" source={GITHUB_PAST_EVENTS_GALLERY_URL}/>
+      <LinksSocial />
       <Footer />
     </Root>
   );
