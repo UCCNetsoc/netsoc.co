@@ -12,7 +12,7 @@ FROM node:12 as build_prod
 
 WORKDIR /app
 
-COPY --from=dev . .
+COPY --from=dev /app .
 
 RUN npm run build
 
