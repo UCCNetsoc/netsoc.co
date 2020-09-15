@@ -25,6 +25,10 @@ const Container = styled.article`
       transparent 20%,
       rgba(22, 22, 22, 0.9) 80%
     );
+    display: grid;
+    padding: 5%;
+    margin-bottom: -1em;
+    grid-template-columns: 1fr 1fr;
   }
 
   & p {
@@ -44,7 +48,13 @@ const Container = styled.article`
     z-index: -1000;
   }
   z-index: 2;
-  @media screen and (max-height: 950px) {
+  @media screen and (max-width: 950px) {
+    & > div {
+      grid-template-columns: none;
+    }
+    & .admin {
+      display: none;
+    }
   }
 `;
 
@@ -56,14 +66,7 @@ export default function (): React.ReactElement {
         <video className="bg" loop autoPlay>
           <source src={Background} type="video/mp4" />
         </video>
-        <div
-          style={{
-            display: 'grid',
-            padding: '5%',
-            marginBottom: '-1em',
-            gridTemplateColumns: '1fr 1fr',
-          }}
-        >
+        <div>
           <div>
             <Box color="transparent" textColor="#fff">
               <Subheader>Free netsoc.co Domain</Subheader>

@@ -50,6 +50,7 @@ const Container = styled.article`
     flex-direction: column;
   }
   @media screen and (max-width: 480px) {
+    width: 70%;
     & ul {
       width: 100%;
     }
