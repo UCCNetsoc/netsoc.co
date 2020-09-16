@@ -19,7 +19,6 @@ const Container = styled.article`
   flex: 1 1 0px;
   flex-flow: column;
   & > div {
-    backdrop-filter: blur(4px);
     background-image: linear-gradient(
       to left,
       transparent 20%,
@@ -63,7 +62,7 @@ export default function (): React.ReactElement {
     <div>
       <Header value="Member Services" color="#fff" />
       <Container>
-        <video className="bg" loop autoPlay>
+        <video className="bg" loop autoPlay muted>
           <source src={Background} type="video/mp4" />
         </video>
         <div>
