@@ -1,7 +1,5 @@
 FROM node:12 as dev
 
-ENV API_URL=https://events.netsoc.dev
-
 WORKDIR /app
 
 COPY . .
@@ -9,6 +7,8 @@ COPY . .
 RUN npm install
 
 FROM node:12 as build_prod
+
+ENV API_URL=https://events.netsoc.dev
 
 WORKDIR /app
 
