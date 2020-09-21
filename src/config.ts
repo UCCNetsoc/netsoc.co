@@ -4,4 +4,4 @@ export const GITHUB_GALLERY_URL =
   'https://api.github.com/repos/uccnetsoc/wiki/contents/gallery';
 export const GITHUB_PAST_EVENTS_GALLERY_URL =
   process.env.GITHUB_PAST_EVENTS_GALLERY_URL ??
-  'https://api.github.com/repos/uccnetsoc/wiki/contents/gallery';
+  'https://api.github.com/repos/uccnetsoc/wiki/contents/events';
