@@ -13,7 +13,8 @@
     "minifyHtml": {
       "collapseWhitespace": false,
       "removeComments": false
-    }
+    },
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
   "repository": {
     "type": "git",
