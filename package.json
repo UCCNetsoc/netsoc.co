@@ -16,6 +16,7 @@
     },
     "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
+  "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UCCNetsoc/netsoc.co.git"
