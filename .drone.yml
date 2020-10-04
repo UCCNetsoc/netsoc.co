@@ -1,9 +1,16 @@
 kind: pipeline
 name: default
 
+volumes:
+  - name: cache
+    temp: {}
+
 steps:
   - name: build_dev
     image: plugins/docker
+    volumes:
+      - name: cache
+        path: /var/lib/docker
     settings:
       tags:
         - 'dev-env_${DRONE_COMMIT_SHA:0:7}'
@@ -23,6 +30,9 @@ steps:
 
   - name: build_prod
     image: plugins/docker
+    volumes:
+      - name: cache
+        path: /var/lib/docker
     settings:
       tags:
         - '${DRONE_COMMIT_SHA:0:7}'

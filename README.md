@@ -4,6 +4,11 @@
 
 Our new fancy website. Made with React and Typescript.
 
+## Screenshots
+![](screenshots/Screenshot_1.png)
+![](screenshots/Screenshot_2.png)
+![](screenshots/Screenshot_3.png)
+
 ## Local development
 
 1. Ensure you have the prerequisits: Node.js, NPM, Docker and docker-compose
