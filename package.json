@@ -5,18 +5,8 @@
   "scripts": {
     "start": "parcel public/index.html",
     "build": "parcel build public/index.html",
-    "postbuild": "react-snap",
     "test": "echo \"Tests coming soon\""
   },
-  "reactSnap": {
-    "source": "dist",
-    "minifyHtml": {
-      "collapseWhitespace": false,
-      "removeComments": false
-    },
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
-  },
-  "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UCCNetsoc/netsoc.co.git"
@@ -34,7 +24,7 @@
     "@types/showdown": "^1.9.3",
     "@types/styled-components": "^5.0.1",
     "parcel": "^1.12.4",
-    "react-snap": "^1.23.0",
+    "parcel-plugin-prerender": "^1.4.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {
