@@ -125,7 +125,7 @@ export default function (): React.ReactElement {
           >
             <div style={{ width: '50vh' }}>
               <div style={{ textAlign: 'center' }}>
-                <img width="320" src={AdminLogo} />
+                <img width="320" src={AdminLogo} alt="Netsoc Admin"/>
               </div>
               <h1 style={{ textAlign: 'center', fontFamily: 'Roboto' }}>
                 <a

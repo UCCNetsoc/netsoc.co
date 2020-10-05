@@ -67,28 +67,28 @@ export default function (props: FooterProps) {
           target="_blank"
           title="@UCCNetsoc"
         >
-          <img className="social" src={github} alt="" />
+          <img className="social" src={github} alt="github" />
         </a>
         <a
           href="https://www.twitter.com/UCCNetsoc"
           target="_blank"
           title="@UCCNetsoc"
         >
-          <img className="social" src={twitter} alt="" />
+          <img className="social" src={twitter} alt="github" />
         </a>
         <a
           href="https://www.facebook.com/NetsocUCC/"
           target="_blank"
           title="@NetsocUCC"
         >
-          <img className="social" src={facebook} alt="" />
+          <img className="social" src={facebook} alt="github" />
         </a>
         <a
           href="https://www.instagram.com/uccnetsoc/"
           target="_blank"
           title="@UCCNetsoc"
         >
-          <img className="social" src={instagram} alt="" />
+          <img className="social" src={instagram} alt="github" />
         </a>
         <img className="logo" src={logo} alt="NETSOC" />
       </nav>

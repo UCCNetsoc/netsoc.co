@@ -133,7 +133,7 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
                 const element = (
                   <div key={announce.date} className="announce">
                     {announce.image_url && (
-                      <img src={announce.image_url} alt="" />
+                      <img src={announce.image_url} alt="Announcement" />
                     )}
                     <h1>{`${da} ${mo} ${ye}`}</h1>
                     <p
