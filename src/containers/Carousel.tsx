@@ -84,7 +84,8 @@ const News = styled.div`
     max-width: 30%;
   }
   & .event img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 30vh;
     margin-top: 1em;
     border-radius: 0.3em;
   }
@@ -123,7 +124,7 @@ const News = styled.div`
       background: #fff;
     }
   }
-  @media screen and (max-height: 800px) {
+  @media screen and (max-height: 900px) {
     & > h1 {
       font-size: 2em;
     }
@@ -134,7 +135,7 @@ const News = styled.div`
       font-size: 0.7em;
     }
     & .event img {
-      width: 75%;
+      max-width: 75%;
       margin-top: 1em;
       border-radius: 0.3em;
     }
