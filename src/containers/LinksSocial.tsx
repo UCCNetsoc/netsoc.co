@@ -65,13 +65,17 @@ const SocialWrap = styled.section`
 
   & * {
     height: 480px !important;
+  }
+
+  & > * {
     padding: 0 1em;
+    width: 300px;
   }
 
   & .fb-page {
     border-radius: 8px !important;
-    left: -2em;
   }
+
   @media screen and (max-width: 1300px) {
     padding-top: 10px;
     & .fb-page {
@@ -136,7 +140,7 @@ export default function (): React.ReactElement {
               className="fb-page"
               data-href="https://www.facebook.com/NetsocUCC"
               data-tabs="timeline"
-              data-width="250"
+              data-width="300"
               data-height=""
               data-small-header="false"
               data-adapt-container-width="true"
