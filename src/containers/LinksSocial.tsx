@@ -84,6 +84,10 @@ const SocialWrap = styled.section`
     & .twitter-timeline {
       display: none !important;
     }
+    & :nth-child(n + 2) {
+      padding: 0 1em;
+      max-width: 0;
+    }
   }
   @media screen and (max-width: 480px) {
     & * {
