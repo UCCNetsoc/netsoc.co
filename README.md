@@ -5,6 +5,7 @@
 Our new fancy website. Made with React and Typescript.
 
 ## Screenshots
+
 ![](screenshots/Screenshot_1.png)
 ![](screenshots/Screenshot_2.png)
 ![](screenshots/Screenshot_3.png)
@@ -15,7 +16,7 @@ Our new fancy website. Made with React and Typescript.
 
 1. Pull this repo
 1. Pull the [dev-env](https://github.com/UCCNetsoc/dev-env) into another directory
-1. `cd` into this repo and run `./start-dev.sh /path/to/dev-env`
+1. `cd` into this repo and run `./start-dev.sh /path/to/dev-env` or `./start-dev.sh /path/to/dev-env bot` if you want to use the local bot.
 1. To open in chrome:
    - Close all chrome instances
    - On Windows: Run`"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --proxy-server="socks5://localhost:1080"`
