@@ -16,8 +16,11 @@ const Root = styled.div<RootProps>`
     margin-top: 30px;
     margin-bottom: 30px;
   }
+  & a {
+    color: rgb(0 0 0 / 75%);
+  }
   & a:hover {
-    color: #0cebd7;
+    text-decoration: underline;
   }
   & a {
     transition: all 0.3s;
