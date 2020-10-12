@@ -25,10 +25,10 @@ fi
 
 if [[ $# -eq 2 ]] ; then
     if [[ $2 == 'bot' ]] ; then
-      sed -i "s/API_URL=.*/API_URL=https:\/\/events.netsoc.dev/g" ./website/docker-compose.override.yml
+      sed -i "s/API_URL=.*/API_URL=http:\/\/discord-bot.netsoc.local/g" ./website/docker-compose.override.yml
       bash -c "./dev-env up website discord-bot"
     fi
     exit 0
 fi
-sed -i "s/API_URL=.*/API_URL=http:\/\/discord-bot.netsoc.local/g" ./website/docker-compose.override.yml
+sed -i "s/API_URL=.*/API_URL=https:\/\/events.netsoc.dev/g" ./website/docker-compose.override.yml
 bash -c "./dev-env up website"

@@ -76,6 +76,11 @@ const SocialWrap = styled.section`
     border-radius: 8px !important;
   }
 
+  @media screen and (max-width: 1400px) {
+    & > * {
+      width: auto;
+    }
+  }
   @media screen and (max-width: 1300px) {
     padding-top: 10px;
     & .fb-page {
