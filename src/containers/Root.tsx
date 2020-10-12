@@ -10,6 +10,7 @@ import Services from './Services';
 import GitHubGallery from './GitHubGallery';
 import Footer from '../components/Footer';
 import LinksSocial from './LinksSocial';
+import Members from './Members';
 
 import { GITHUB_GALLERY_URL, GITHUB_PAST_EVENTS_GALLERY_URL } from '../config';
 
@@ -43,9 +44,14 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <About />
       <Scroll.Element name="services" />
       <Services />
+      <Header value="Members" color="#007BDE" />
+      <Members />
       <Scroll.Element name="gallery" />
-      <GitHubGallery title="GALLERY" source={GITHUB_GALLERY_URL}/>
-      <GitHubGallery title="PAST EVENTS" source={GITHUB_PAST_EVENTS_GALLERY_URL}/>
+      <GitHubGallery title="GALLERY" source={GITHUB_GALLERY_URL} />
+      <GitHubGallery
+        title="PAST EVENTS"
+        source={GITHUB_PAST_EVENTS_GALLERY_URL}
+      />
       <LinksSocial />
       <Footer />
     </Root>

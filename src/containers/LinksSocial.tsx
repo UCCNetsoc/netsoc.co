@@ -77,10 +77,9 @@ const SocialWrap = styled.section`
   }
 
   @media screen and (max-width: 1400px) {
-  & > * {
-    width: auto;
-  }
-  }
+    & > * {
+      width: auto;
+    }
   }
   @media screen and (max-width: 1300px) {
     padding-top: 10px;
