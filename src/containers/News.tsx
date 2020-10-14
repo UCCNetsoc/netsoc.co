@@ -5,6 +5,24 @@ import { Converter } from 'showdown';
 import { API_URL } from '../config';
 
 const converter = new Converter({ simplifiedAutoLink: true });
+const replacer = (message: string): string => {
+  const emojis = message.match(/<:.*:([^>]*)>/);
+  const emojisA = message.match(/<a:.*:([^>]*)>/);
+  const elem = (s: string) =>
+    `<i class="emoji" style="background-image: url(${s});"></i>`;
+  if (emojis) {
+    return message.replace(
+      emojis[0],
+      elem(`https://cdn.discordapp.com/emojis/${emojis[1]}.png`)
+    );
+  } else if (emojisA) {
+    return message.replace(
+      emojisA[0],
+      elem(`https://cdn.discordapp.com/emojis/${emojisA[1]}.gif`)
+    );
+  }
+  return message;
+};
 
 interface RootProps {}
 const Root = styled.div<RootProps>`
@@ -15,6 +33,13 @@ const Root = styled.div<RootProps>`
     width: 40px;
     margin-top: 30px;
     margin-bottom: 30px;
+  }
+  & .announce .emoji {
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: top;
   }
   & a {
     color: #fff !important;
@@ -98,7 +123,7 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
   React.useEffect(() => {
     (async () => {
       try {
-        const data = await fetch(`${API_URL}/announcements?q=3`);
+        const data = await fetch(`${API_URL}/announcements?q=5`);
         const recieved = (await data.json()) as IAnnouncement[];
         setAnnouncements(recieved);
         console.log(recieved);
@@ -133,7 +158,7 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
                 const da = new Intl.DateTimeFormat('en', {
                   day: '2-digit',
                 }).format(date);
-                const str = converter.makeHtml(announce.content);
+                let str = converter.makeHtml(replacer(announce.content));
                 const element = (
                   <div key={announce.date} className="announce">
                     {announce.image_url && (
