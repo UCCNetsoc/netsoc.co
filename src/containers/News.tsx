@@ -4,7 +4,11 @@ import loader from '../../public/img/loader.svg';
 import { Converter } from 'showdown';
 import { API_URL } from '../config';
 
-const converter = new Converter({ simplifiedAutoLink: true });
+const converter = new Converter({
+  simplifiedAutoLink: true,
+  simpleLineBreaks: true,
+  underline: true,
+});
 const replacer = (message: string): string => {
   const emojis = message.match(/<:.*:([^>]*)>/);
   const emojisA = message.match(/<a:.*:([^>]*)>/);
