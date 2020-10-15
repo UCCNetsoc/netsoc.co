@@ -46,11 +46,13 @@ const Root = styled.div<RootProps>`
     vertical-align: top;
   }
   & a {
-    color: #fff !important;
-    text-decoration: underline;
+    color: #92f5ff !important;
+    opacity:0.75;
+    text-decoration: none;
   }
   & a:hover {
     text-decoration: underline;
+    opacity:1;
   }
   & a {
     transition: all 0.3s;
