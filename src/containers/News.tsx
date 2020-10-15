@@ -152,8 +152,9 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
         ) : (
           (() => {
             const output: JSX.Element[] = [];
-            for (let announce of announcements) {
+            for (let i=0; i < announcements.length; i++) {
               try {
+                const announce=announcements[i];
                 const date = new Date(announce.date * 1000);
                 const ye = new Intl.DateTimeFormat('en', {
                   year: 'numeric',
