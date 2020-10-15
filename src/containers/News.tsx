@@ -78,6 +78,14 @@ const Root = styled.div<RootProps>`
     margin: 0;
     color: #003e70;
   }
+  & .announce h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 36px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #005ca7;
+  }
   & .announce > p {
     font-family: 'Roboto', sans-serif;
     color: #fff;
@@ -107,6 +115,9 @@ const Root = styled.div<RootProps>`
     }
     & .announce h1 {
       font-size: 36px;
+    }    
+    & .announce h2 {
+      font-size: 16px;
     }
     & .error {
       margin-left: 10%;
@@ -166,18 +177,37 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
                   day: '2-digit',
                 }).format(date);
                 let str = converter.makeHtml(replacer(announce.content));
+                const h = new Intl.DateTimeFormat('en', {
+                  hour: '2-digit',
+                  hour12: false,
+                }).format(date);
+                const min = new Intl.DateTimeFormat('en', {
+                  minute: '2-digit',
+                  hour12: false,
+                }).format(date);
+                let dateHead=null;
+                let timeHead = (
+                  <h2>{`${("0" + h).slice(-2)} : ${("0" + min).slice(-2)}`}</h2>
+              );
+                if (((i==0)&&((String(announcements[i].date).substring(0,5))!=(String(announcements[i+1].date).substring(0,5)))) || ((i==announcements.length-1)&&((String(announcements[i].date).substring(0,5))!=(String(announcements[i-1].date).substring(0,5))))) {
+                  timeHead=null;
+                }
+                if ((i==0)||(((String(announcements[i].date).substring(0,5))!=(String(announcements[i-1].date).substring(0,5))))){
+                  dateHead=(<h1>{`${da} ${mo} ${ye}`}</h1>);
+                }
                 const element = (
                   <div key={announce.date} className="announce">
                     {announce.image_url && (
                       <img src={announce.image_url} alt="Announcement" />
                     )}
-                    <h1>{`${da} ${mo} ${ye}`}</h1>
-                    <p
-                      className={announce.image_url && 'imgContent'}
-                      dangerouslySetInnerHTML={{ __html: str }}
-                    ></p>
-                  </div>
-                );
+                    {dateHead}
+                    {timeHead}
+                  <p
+                  className={announce.image_url && 'imgContent'}
+                  dangerouslySetInnerHTML={{ __html: str }}
+                ></p>
+              </div>
+              );
                 output.push(element);
               } catch ({ message }) {
                 console.error(message);
