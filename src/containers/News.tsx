@@ -206,7 +206,11 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
                       String(announcements[i + 1].date).substring(0, 5)) ||
                   (i == announcements.length - 1 &&
                     String(announcements[i].date).substring(0, 5) !=
-                      String(announcements[i - 1].date).substring(0, 5))
+                      String(announcements[i - 1].date).substring(0, 5)) ||
+                  ((String(announcements[i].date).substring(0, 5) !=
+                      String(announcements[i - 1].date).substring(0, 5)) && 
+                  (String(announcements[i].date).substring(0, 5) !=
+                      String(announcements[i + 1].date).substring(0, 5)))
                 ) {
                   timeHead = null;
                 }
