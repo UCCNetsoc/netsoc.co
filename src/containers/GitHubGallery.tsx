@@ -70,8 +70,8 @@ const Thumb = styled.img`
 `;
 
 export interface GalleryProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string
-  source: string
+  title: string;
+  source: string;
 }
 
 export default function (
@@ -88,10 +88,8 @@ export default function (
           type: string;
           path: string;
         }[];
-        console.log(response);
         const tempArray: PhotoSwipeGalleryItem[] = [];
         for (let img of response) {
-          console.log(img);
           if (img.type !== 'file') {
             continue;
           }
