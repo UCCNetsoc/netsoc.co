@@ -183,6 +183,10 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
                   day: '2-digit',
                 }).format(date);
                 let str = announce.content;
+                if (str.includes("<#")) {
+                  str = str.replace(/\<#\d+>/g, "<a href='http://discord.netsoc.co/'>Discord</a>")
+                }
+                str = str.charAt(0).toUpperCase() + str.slice(1)
                 let changed = true;
                 while (changed) {
                   [str, changed] = replacer(str);
