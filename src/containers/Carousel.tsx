@@ -188,12 +188,15 @@ export default function (
   React.useEffect(() => {
     (async () => {
       try {
-        const data = await fetch(`${API_URL}/events?q=2`);
+        const data = await fetch(`${API_URL}/fbEvents?q=2`);
         const recieved = (await data.json()) as IEvent[];
         setEvents(recieved);
         console.log(recieved);
         if (recieved.length === 0) {
           setError('logo');
+        }
+        if (recieved.length > 2) {
+          recieved.splice(2);
         }
       } catch ({ message }) {
         console.error(message);
