@@ -229,13 +229,13 @@ export default function (
                         <div key={event.date} className="event">
                           <h1>{event.title}</h1>
                           <h2>
-                            {(date.getMonth() > 8
-                              ? date.getMonth() + 1
-                              : '0' + (date.getMonth() + 1)) +
+                            {(date.getDate() > 9
+                              ? date.getDate()
+                              : '0' + date.getDate()) +
                               '/' +
-                              (date.getDate() > 9
-                                ? date.getDate()
-                                : '0' + date.getDate()) +
+                              (date.getMonth() > 8
+                                ? date.getMonth() + 1
+                                : '0' + date.getMonth() + 1) +
                               '/' +
                               date.getFullYear()}
                           </h2>
