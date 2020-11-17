@@ -1,6 +1,6 @@
 # [![](https://raw.githubusercontent.com/UCCNetsoc/wiki/master/assets/logo-horizontal-inverted.svg)](https://netsoc.co/rk)
 
-[![](https://ci.netsoc.dev/api/badges/uccnetsoc/netsoc.co/status.svg)](https://ci.netsoc.dev/UCCNetsoc/netsoc.co/)
+[![](https://ci.netsoc.co/api/badges/uccnetsoc/netsoc.co/status.svg)](https://ci.netsoc.co/UCCNetsoc/netsoc.co/)
 
 Our new fancy website. Made with React and Typescript.
 
