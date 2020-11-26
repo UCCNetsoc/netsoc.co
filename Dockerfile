@@ -8,7 +8,7 @@ RUN npm install
 
 FROM node:12 as build_prod
 
-ENV API_URL=https://events.netsoc.dev
+ENV API_URL=https://bot.netsoc.co
 
 WORKDIR /app
 
