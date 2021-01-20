@@ -3,7 +3,7 @@ import Box from '../components/Box';
 import Header from '../components/Header';
 import styled from 'styled-components';
 import Background from '../../public/servers.mp4';
-import AdminLogo from '../../public/img/admin-logo.svg';
+import CloudLogo from '../../public/img/cloud-logo.svg';
 
 const Subheader = styled.h1`
   font-family: 'Lato', sans-serif;
@@ -68,55 +68,44 @@ export default function (): React.ReactElement {
         <div>
           <div>
             <Box color="transparent" textColor="#fff">
-              <Subheader>Free netsoc.co Domain</Subheader>
+              <Subheader>Free Cloud Hosting</Subheader>
+              <div>
+                <p>
+                  Netsoc provides free Cloud hosting services available to all
+                  UCC students and societies. If you'd like to avail of these
+                  services, feel free to try them out via{' '}
+                  <a href="http://netsoc.cloud/"> Netsoc Cloud</a>. You can
+                  request free VPS's (Virtual Private Servers) or Containers.
+                </p>
+                <p>
+                  These allow you to run whatever software stack you want on our
+                  servers.
+                </p>
+              </div>
+              <Subheader>Free netsoc.cloud Domains</Subheader>
               <p>
-                When you sign up to our services via{' '}
-                <a href="http://admin.netsoc.co/"> Netsoc Admin</a> you'll get a
-                free <i>username.netsoc.co</i> domain that points to your
-                website or blog.
+                When you sign up to our cloud services via{' '}
+                <a href="http://netsoc.cloud/"> Netsoc Cloud</a> you'll be able
+                to claim <i>*.netsoc.cloud</i> domains that point to your cloud
+                instances.
               </p>
               <p>
                 If you'd rather a custom domain, you can register one and follow
-                the steps on Netsoc Admin to get it to point to your website.
+                the steps on Netsoc Cloud to get it to point to your instance.
+              </p>
+              <Subheader>Free Blog Hosting</Subheader>
+              <p>
+                We provide container templates that allows you to get up and
+                running with a <b>WordPress</b> or <b>GhostCMS</b> instantly.
               </p>
               <Subheader>Free Game Server Hosting</Subheader>
               <div>
                 <p>
-                  Netsoc provides free <b>game server hosting</b> available to
-                  all Netsoc members. We offer premade server templats for games
-                  such as <i>Minecraft</i>, <i>Rust</i>, <i>Terraria</i>,{' '}
-                  <i>Counter Strike: Global Offensive</i> and many more.
-                </p>
-                <p>
-                  Head on over to{' '}
-                  <a href="http://games.netsoc.co/"> Netsoc Games</a> to get
-                  started!
+                  Since we provide free containers, you can delpoy any game
+                  server you want on our services by simply using the terminal
+                  provided by Netsoc Cloud!
                 </p>
               </div>
-              <Subheader>Free Server Space</Subheader>
-              <div>
-                <p>
-                  Netsoc provides free hosting services available to all UCC
-                  students and societies. If you'd like to avail of these
-                  services, feel free to try them out via{' '}
-                  <a href="http://admin.netsoc.co/"> Netsoc Admin</a>. You can
-                  use the server space to host anything from HTML to Python CGI.
-                </p>
-              </div>
-              <Subheader>Free WordPress Hosting</Subheader>
-              <p>
-                In addition to our free hosting services, Netsoc also makes it
-                easy to set up your own WordPress website, available to all UCC
-                students and societies.
-              </p>
-              <p>
-                WordPress is a free and open-source content management system
-                that allows you to post and manage your content with ease.
-                Whether it's a blog or a portfolio, it can be managed with
-                WordPress. To signup for your free WordPress hosting, just go to
-                <a href="http://admin.netsoc.co/"> Netsoc Admin</a> and create
-                your account.
-              </p>
             </Box>
           </div>
           <div
@@ -125,12 +114,12 @@ export default function (): React.ReactElement {
           >
             <div style={{ width: '50vh' }}>
               <div style={{ textAlign: 'center' }}>
-                <img width="320" src={AdminLogo} alt="Netsoc Admin"/>
+                <img width="320" src={CloudLogo} alt="Netsoc Cloud" />
               </div>
               <h1 style={{ textAlign: 'center', fontFamily: 'Roboto' }}>
                 <a
                   style={{ fontSize: '1.35em', textDecoration: 'underline' }}
-                  href="https://admin.netsoc.co"
+                  href="https://netsoc.cloud"
                 >
                   open
                 </a>
