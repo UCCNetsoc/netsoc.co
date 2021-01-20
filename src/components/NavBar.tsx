@@ -171,8 +171,8 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
         <a href="http://discord.netsoc.co/" target="_blank">
           <li className="discord">DISCORD</li>
         </a>
-        <a href="http://admin.netsoc.co" target="_blank">
-          <li className="admin">ADMIN PANEL</li>
+        <a href="http://netsoc.cloud" target="_blank">
+          <li className="admin">CLOUD</li>
         </a>
       </ul>
       <div onClick={() => setOpen(!open)} className="menu">
