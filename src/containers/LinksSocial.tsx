@@ -8,14 +8,13 @@ interface ILink {
 }
 
 const links: ILink[] = [
-  { name: 'Netsoc Admin', url: 'https://admin.netsoc.co/' },
-  { name: 'GitHub', url: 'https://github.com/UCCNetsoc/' },
-  { name: 'Wiki', url: 'https://wiki.netsoc.co/' },
-  { name: 'Dev Blog', url: 'https://blog.netsoc.co/' },
-  { name: 'Constitution', url: 'https://constitution.netsoc.co/' },
-  { name: 'Minecraft Server', url: 'https://minecraft.netsoc.co/' },
+  { name: 'Netsoc Wiki', url: 'https://wiki.netsoc.co/' },
+  { name: 'Netsoc Cloud', url: 'https://netsoc.cloud' },
+  { name: 'Our GitHub', url: 'https://github.com/UCCNetsoc/' },
+  { name: 'Our Constitution', url: 'https://constitution.netsoc.co/' },
   { name: 'HLM Nominations', url: 'https://hlm.netsoc.co/' },
-  { name: 'Docker Registry', url: 'https://docker.netsoc.co/' },
+  { name: 'Dev Blog', url: 'https://blog.netsoc.co/' },
+  { name: 'Docker Hub', url: 'https://hub.docker.com/u/uccnetsoc' },
 ];
 
 const Container = styled.article`
