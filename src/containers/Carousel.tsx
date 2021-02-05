@@ -41,11 +41,11 @@ const Logo = styled.img`
 `;
 const News = styled.div`
   width: 100%;
-  height: 77vh;
-  margin-top: 30px;
+  height: 80vh;
+  margin-top: 0;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
-  padding: 10px 0;
+  padding: 30px 0;
   & a:hover {
     color: #0cebd7;
   }
