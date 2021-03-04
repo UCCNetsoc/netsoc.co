@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import loader from '../../public/img/loader.svg';
 import { Converter } from 'showdown';
 import { API_URL } from '../config';
+import {
+  PhotoSwipe,
+  PhotoSwipeGallery,
+  PhotoSwipeGalleryItem,
+} from 'react-photoswipe';
+
+import 'react-photoswipe/lib/photoswipe.css';
 
 const converter = new Converter({
   simplifiedAutoLink: true,
@@ -109,6 +116,20 @@ const Root = styled.div<RootProps>`
     top: 50%;
     transform: translate(50%,-50%);
     border: solid 5px #003e7029;
+    cursor: pointer;
+  }
+  & .pswp .pswp__bg{
+    opacity: 0.97;
+  }
+  & .pswp img {
+    height: auto !important;
+    max-height: 992px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    transform: translate(0,-50%);
   }
   @media screen and (max-width: 850px) {
     & .announce img {
@@ -145,6 +166,8 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
   const [announcements, setAnnouncements] = React.useState<IAnnouncement[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState('');
+  const [items, setItems] = React.useState<PhotoSwipeGalleryItem[]>([]);
+  const [isOpen, setIsOpen] = React.useState(-1);
   React.useEffect(() => {
     (async () => {
       try {
@@ -161,6 +184,9 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
       setLoading(false);
     })();
   }, []);
+  const getThumbnailContent = (item: PhotoSwipeGalleryItem) => {
+    return <div hidden={true} />;
+  };
   return (
     <Root>
       <section className="eventContainer">
@@ -230,7 +256,7 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
                 const element = (
                   <div key={announce.date} className="announce">
                     {announce.image_url && (
-                      <img src={announce.image_url} alt="Announcement" />
+                      <img src={announce.image_url} id={i} alt="Announcement" onClick={() => setIsOpen(i)}/>
                     )}
                     {dateHead}
                     {timeHead}
@@ -241,6 +267,25 @@ export default function (props: NewsProps): React.ReactElement<NewsProps> {
                   </div>
                 );
                 output.push(element);
+                if announce.image_url.length {
+                  const tempArray: PhotoSwipeGalleryItem[] = [];
+                  let item = {
+                    src: announce.image_url,
+                    thumbnail: announce.image_url,
+                    title: null,
+                    h: window.outerHeight,
+                  } as PhotoSwipeGalleryItem;
+                  tempArray.push(item)
+                  output.push(
+                    <PhotoSwipeGallery
+                      thumbnailContent={getThumbnailContent}
+                      isOpen={isOpen == i}
+                      items={tempArray}
+                      options={{ showAnimationDuration: 0, hideAnimationDuration: 0 }}
+                      onClose={() => setIsOpen(-1)}
+                    />
+                    )
+                }
               } catch ({ message }) {
                 console.error(message);
               }
