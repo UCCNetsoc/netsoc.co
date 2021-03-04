@@ -131,7 +131,7 @@ const Root = styled.div<RootProps>`
     top: 50%;
     transform: translate(0,-50%);
   }
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 1020px) {
     & .announce img {
       display: none;
     }
@@ -151,6 +151,11 @@ const Root = styled.div<RootProps>`
     & .error {
       margin-left: 10%;
       font-size: 0.8em;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    & .announce img {
+    width: 45vh;
     }
   }
 `;
