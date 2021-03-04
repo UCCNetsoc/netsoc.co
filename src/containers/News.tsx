@@ -103,10 +103,12 @@ const Root = styled.div<RootProps>`
     width: 50%;
   }
   & .announce img {
-    width: 40%;
-    float: right;
-    right: 0;
+    width: 55vh;
     position: absolute;
+    right: 25%;
+    top: 50%;
+    transform: translate(50%,-50%);
+    border: solid 5px #003e7029;
   }
   @media screen and (max-width: 850px) {
     & .announce img {
