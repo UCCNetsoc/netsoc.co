@@ -62,12 +62,16 @@ steps:
       - chmod 0600 ./keys/infra/databases/id_rsa
       - ls -al ./keys/infra/web
       - ls -al ./keys/infra/databases
-
     environment:
       KEY_WEB:
         from_secret: key_web
       KEY_DATABASES:
         from_secret: key_databases
+    when:
+      event:
+        - push
+      branch:
+        - master
 
   - name: ansible_deploy
     image: uccnetsoc/drone-ansible
@@ -89,6 +93,11 @@ steps:
         from_secret: vault_pass
       tags:
         - static-websites
+    when:
+      event:
+        - push
+      branch:
+        - master
         
   - name: discord_notif_success
     image: appleboy/drone-discord
@@ -109,6 +118,7 @@ steps:
         - master
       status:
         - success
+        
   - name: discord_notif_failure
     image: appleboy/drone-discord
     environment:
