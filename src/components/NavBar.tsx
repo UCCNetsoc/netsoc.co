@@ -63,21 +63,9 @@ const Root = styled.nav<RootProps>`
       )
       no-repeat 0 0;
   }
-  & .wiki {
-    background: #070f15;
-  }
-  & .blog {
-    background: #10202d;
-  }
-  & .discord {
-    background: #003e70;
-  }
-  & .admin {
-    background: #0c8df5;
-  }
-  & .admin:hover,
-  & .discord:hover {
-    background: #111;
+  & .ext li:hover {
+    background: #fff !important;
+    color: #0c8df5;
   }
   & .menu {
     display: none;
@@ -174,17 +162,17 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
         >
           <li>GALLERY</li>
         </Link>
-        <a href="http://wiki.netsoc.co/" target="_blank">
-          <li className="wiki">WIKI</li>
+        <a href="http://wiki.netsoc.co/" target="_blank" className="ext">
+          <li style={{background: '#070f15'}} className="wiki">WIKI</li>
         </a>
-        <a href="http://blog.netsoc.co/" target="_blank">
-          <li className="blog">BLOG</li>
+        <a href="http://blog.netsoc.co/" target="_blank" className="ext">
+          <li style={{background: '#10202d'}}className="blog">BLOG</li>
         </a>
-        <a href="http://discord.netsoc.co/" target="_blank">
-          <li className="discord">DISCORD</li>
+        <a href="http://discord.netsoc.co/" target="_blank" className="ext">
+          <li style={{background: '#003e70'}} className="discord">DISCORD</li>
         </a>
-        <a href="http://netsoc.cloud" target="_blank">
-          <li className="admin">CLOUD</li>
+        <a href="http://netsoc.cloud" target="_blank" className="ext">
+          <li style={{background: '#0c8df5'}} className="admin">CLOUD</li>
         </a>
       </ul>
       <div onClick={() => setOpen(!open)} className="menu">
