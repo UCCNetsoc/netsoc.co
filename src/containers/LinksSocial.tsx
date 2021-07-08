@@ -10,10 +10,9 @@ interface ILink {
 const links: ILink[] = [
   { name: 'Netsoc Wiki', url: 'https://wiki.netsoc.co/' },
   { name: 'Netsoc Cloud', url: 'https://netsoc.cloud' },
+  { name: 'Netsoc Blog', url: 'https://blog.netsoc.co/' },
   { name: 'Our GitHub', url: 'https://github.com/UCCNetsoc/' },
   { name: 'Our Constitution', url: 'https://constitution.netsoc.co/' },
-  { name: 'HLM Nominations', url: 'https://hlm.netsoc.co/' },
-  { name: 'Dev Blog', url: 'https://blog.netsoc.co/' },
   { name: 'Docker Hub', url: 'https://hub.docker.com/u/uccnetsoc' },
 ];
 

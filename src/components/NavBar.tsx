@@ -63,6 +63,12 @@ const Root = styled.nav<RootProps>`
       )
       no-repeat 0 0;
   }
+  & .wiki {
+    background: #070f15;
+  }
+  & .blog {
+    background: #10202d;
+  }
   & .discord {
     background: #003e70;
   }
@@ -168,6 +174,12 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
         >
           <li>GALLERY</li>
         </Link>
+        <a href="http://wiki.netsoc.co/" target="_blank">
+          <li className="wiki">WIKI</li>
+        </a>
+        <a href="http://blog.netsoc.co/" target="_blank">
+          <li className="blog">BLOG</li>
+        </a>
         <a href="http://discord.netsoc.co/" target="_blank">
           <li className="discord">DISCORD</li>
         </a>
