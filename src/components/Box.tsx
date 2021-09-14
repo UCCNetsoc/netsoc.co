@@ -31,6 +31,10 @@ const Root = styled.div<RootProps>`
     width: ${(props) => (props.padding ? '80%' : '50%')};
     text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
   }
+  & span a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
   & a {
     font-weight: bold;
     color: ${(props) => props.textColor ?? '#fff'};

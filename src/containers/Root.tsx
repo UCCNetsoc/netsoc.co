@@ -13,6 +13,7 @@ import LinksSocial from './LinksSocial';
 import Members from './Members';
 
 import { GITHUB_GALLERY_URL, GITHUB_PAST_EVENTS_GALLERY_URL } from '../config';
+import Calendar from './Calendar';
 
 const Root = styled.div`
   margin: 0;
@@ -40,6 +41,7 @@ export default function (props: RootProps): React.ReactElement<RootProps> {
       <Scroll.Element name="news" />
       <Header value="News" color="#007BDE" />
       <News />
+      <Calendar />
       <Scroll.Element name="about" />
       <About />
       <Scroll.Element name="services" />

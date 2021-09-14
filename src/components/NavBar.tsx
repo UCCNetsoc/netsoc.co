@@ -162,11 +162,14 @@ export default function (props: NavBarProps): React.ReactElement<NavBarProps> {
         >
           <li>GALLERY</li>
         </Link>
+        <a href="http://netsoc.co/go/calendar" target="_blank" className="ext">
+          <li style={{background: '#070f15'}} className="wiki">CALENDAR</li>
+        </a>
         <a href="http://wiki.netsoc.co/" target="_blank" className="ext">
-          <li style={{background: '#070f15'}} className="wiki">WIKI</li>
+          <li style={{background: '#09131b'}} className="wiki">WIKI</li>
         </a>
         <a href="http://blog.netsoc.co/" target="_blank" className="ext">
-          <li style={{background: '#10202d'}}className="blog">BLOG</li>
+          <li style={{background: '#10202d'}} className="blog">BLOG</li>
         </a>
         <a href="http://discord.netsoc.co/" target="_blank" className="ext">
           <li style={{background: '#003e70'}} className="discord">DISCORD</li>
