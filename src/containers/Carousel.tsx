@@ -200,7 +200,7 @@ export default function (
         }
       } catch ({ message }) {
         console.error(message);
-        setError('An error occurred fetching events');
+        setError('logo');
       }
       setLoading(false);
     })();
