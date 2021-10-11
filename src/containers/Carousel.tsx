@@ -175,7 +175,8 @@ interface IEvent {
   title: string;
   description: string;
   image_url: string;
-  date: number;
+  start_date: string;
+  end_date: string;
 }
 
 export interface CarouselProps extends RootProps {}
@@ -188,7 +189,8 @@ export default function (
   React.useEffect(() => {
     (async () => {
       try {
-        const data = await fetch(`${API_URL}/fbEvents?q=2`);
+        // const data = await fetch(`${API_URL}/events?q=2`);
+        const data = await fetch(`http://discord-bot.netsoc.local/events?q=2`);
         const recieved = (await data.json()) as IEvent[];
         setEvents(recieved);
         console.log(recieved);
@@ -222,11 +224,17 @@ export default function (
               <div className="eventContainer">
                 {(() => {
                   const output: JSX.Element[] = [];
-                  for (let event of events) {
+                  for (let i = 0; i < events.length; i++) {
+                    let event = events[i];
+                    if (i == 1 && event.title == events[i - 1].title) {
+                      continue;
+                    }
                     try {
-                      const date = new Date(event.date * 1000);
+                      console.log(event.start_date);
+                      const date = new Date(event.start_date);
+                      console.log(date);
                       const element = (
-                        <div key={event.date} className="event">
+                        <div key={event.start_date} className="event">
                           <h1>{event.title}</h1>
                           <h2>
                             {(date.getDate() > 9
