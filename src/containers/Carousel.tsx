@@ -189,8 +189,7 @@ export default function (
   React.useEffect(() => {
     (async () => {
       try {
-        // const data = await fetch(`${API_URL}/events?q=2`);
-        const data = await fetch(`http://discord-bot.netsoc.local/events?q=2`);
+        const data = await fetch(`${API_URL}/events?q=2`);
         const recieved = (await data.json()) as IEvent[];
         setEvents(recieved);
         console.log(recieved);
