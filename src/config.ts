@@ -1,4 +1,4 @@
-export const API_URL = process.env.API_URL ?? 'http://localhost:8888';
+export const API_URL = process.env.API_URL ?? '';
 export const GITHUB_GALLERY_URL =
   process.env.GITHUB_GALLERY_URL ??
   'https://api.github.com/repos/uccnetsoc/wiki/contents/gallery';
