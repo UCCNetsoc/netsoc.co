@@ -4,7 +4,7 @@ import imgMain from '../../public/img/1.jpg';
 import logo from '../../public/img/logo.svg';
 import loader from '../../public/img/loader.svg';
 import { Converter } from 'showdown';
-import { API_URL } from '../config';
+import { API_URL, ENABLE_EVENTS_BANNER } from '../config';
 
 const converter = new Converter({ simplifiedAutoLink: true });
 
@@ -188,19 +188,23 @@ export default function (
   const [error, setError] = React.useState('');
   React.useEffect(() => {
     (async () => {
-      try {
-        const data = await fetch(`${API_URL}/events?q=2`);
-        const received = (await data.json()) as IEvent[];
-        setEvents(received);
-        console.log(received);
-        if (received.length === 0) {
+      if ENABLE_EVENTS_BANNER {
+        try {
+          const data = await fetch(`${API_URL}/events?q=2`);
+          const received = (await data.json()) as IEvent[];
+          setEvents(received);
+          console.log(received);
+          if (received.length === 0) {
+            setError('logo');
+          }
+          if (received.length > 2) {
+            received.splice(2);
+          }
+        } catch ({ message }) {
+          console.error(message);
           setError('logo');
         }
-        if (received.length > 2) {
-          received.splice(2);
-        }
-      } catch ({ message }) {
-        console.error(message);
+      } else {
         setError('logo');
       }
       setLoading(false);
