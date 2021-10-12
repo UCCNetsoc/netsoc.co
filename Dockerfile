@@ -9,7 +9,7 @@ RUN npm install
 FROM node:12 as build_prod
 
 ENV API_URL=https://bot.netsoc.co
-ENV ENABLE_EVENT_BANNER=true
+ENV ENABLE_EVENTS_BANNER=true
 
 WORKDIR /app
 
