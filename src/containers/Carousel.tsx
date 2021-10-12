@@ -190,14 +190,14 @@ export default function (
     (async () => {
       try {
         const data = await fetch(`${API_URL}/events?q=2`);
-        const recieved = (await data.json()) as IEvent[];
-        setEvents(recieved);
-        console.log(recieved);
-        if (recieved.length === 0) {
+        const received = (await data.json()) as IEvent[];
+        setEvents(received);
+        console.log(received);
+        if (received.length === 0) {
           setError('logo');
         }
-        if (recieved.length > 2) {
-          recieved.splice(2);
+        if (received.length > 2) {
+          received.splice(2);
         }
       } catch ({ message }) {
         console.error(message);
