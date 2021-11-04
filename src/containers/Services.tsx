@@ -72,7 +72,7 @@ export default function (): React.ReactElement {
               <div>
                 <p>
                   Netsoc provides free Cloud hosting services available to all
-                  UCC students and societies. If you'd like to avail of these
+                  UCC students. If you'd like to avail of these
                   services, feel free to try them out via{' '}
                   <a href="http://netsoc.cloud/"> Netsoc Cloud</a>. You can
                   request free VPS's (Virtual Private Servers) or Containers.
