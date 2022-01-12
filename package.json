@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@types/react-photoswipe": "^1.3.0",
-    "markdown-it": "^11.0.0",
+    "markdown-it": "^12.3.2",
     "photoswipe": "^4.1.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
