@@ -140,27 +140,6 @@ export default function (): React.ReactElement {
               Tweets by UCCNetsoc
             </a>
           </div>
-
-          <div>
-            <div
-              className="fb-page"
-              data-href="https://www.facebook.com/NetsocUCC"
-              data-tabs="timeline"
-              data-width="300"
-              data-height=""
-              data-small-header="false"
-              data-adapt-container-width="true"
-              data-hide-cover="false"
-              data-show-facepile="true"
-            >
-              <blockquote
-                cite="https://www.facebook.com/NetsocUCC"
-                className="fb-xfbml-parse-ignore"
-              >
-                <a href="https://www.facebook.com/NetsocUCC">UCC Netsoc</a>
-              </blockquote>
-            </div>
-          </div>
         </SocialWrap>
       </Container>
     </div>
