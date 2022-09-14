@@ -21,6 +21,7 @@ function App() {
       </header>
       <small>
         Meb here always
+        Meb heren't
       </small>
     </div>
   );
