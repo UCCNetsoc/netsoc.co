@@ -20,7 +20,7 @@ function App() {
         </a>
       </header>
       <small>
-        Meb here
+        Meb heren't
       </small>
     </div>
   );
