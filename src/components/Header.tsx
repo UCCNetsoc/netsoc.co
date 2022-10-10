@@ -1,11 +1,12 @@
-const Header = (): JSX.Element => {
-    const todaysDate = new Date().toLocaleDateString();
+import { useLocation } from "react-router-dom";
 
-    return (
-        <div>
-            <h1>{ todaysDate }</h1>
-        </div>
-    )
+const Header = (): JSX.Element => {
+
+  const location = useLocation();
+
+  return (
+    <></>
+  )
 };
 
 export default Header;
