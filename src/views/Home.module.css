@@ -64,7 +64,6 @@
 
 .nav ul li a:hover::after {
     width: 100%;
-    transition: width 0.25s;
 }
 
 .quicklinks {
