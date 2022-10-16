@@ -1,6 +1,6 @@
 .jumbo {
     user-select: text;
-    height: 30vh;
+    height: 28vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,8 +18,7 @@
 }
 
 .nav {
-    height: 40vh;
-    margin: 3vh 0;
+    height: 30vh;
 }
 
 .nav ul {
@@ -38,7 +37,6 @@
 .nav ul li {
     width: 100%;
     margin-bottom: 24px;
-    /* text-align: center; */
 }
 
 .nav ul li a {
@@ -59,7 +57,8 @@
     width: 0;
     height: 3px;
     background: #fff;
-    transition: width 0.3s;
+    opacity: 87%;
+    transition: width 0.18s;
 }
 
 .nav ul li a:hover::after {
@@ -68,7 +67,7 @@
 
 .quicklinks {
     width: 70%;
-    margin: auto;
+    margin: 2rem auto 0 auto;
 }
 
 @media screen and (max-width: 1000px) {
