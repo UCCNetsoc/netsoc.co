@@ -1,0 +1,137 @@
+.jumbo {
+    user-select: text;
+    height: 28vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 3.25em;
+    margin-bottom: 0;
+}
+
+.title,.subtitle {
+    font-weight: 300;
+    text-align: center;
+}
+
+.nav {
+    height: 30vh;
+}
+
+.nav ul {
+    padding-left: 0 !important;
+    text-align: center;
+    height: 100%;
+    width: 180px;
+    margin: auto;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav ul li {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.nav ul li a {
+    width: 100%;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fffc;
+    width: 100%;
+}
+
+.nav ul li a:hover {
+    color: #fff;
+}
+
+.nav ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    opacity: 87%;
+    transition: width 0.18s;
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+.quicklinks {
+    width: 70%;
+    margin: 2rem auto 0 auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .quicklinks {
+        width: 100%;
+    }
+}
+
+.quicklinks .title {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.quicklinks ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.quicklinks ul li {
+    width: 320px;
+    height: 90px;
+    padding: 12px;
+    border: 1px solid #fff2;
+    border-radius: 5px;
+    margin: 16px 10px;
+    transition: all 0.11s ease-in-out;
+}
+
+.quicklinks ul li:hover {
+    transform: translateY(-8px);
+}
+
+.quicklinks ul li a {
+    height: 100%;
+    width: 100%;
+    color: unset;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.quicklinks ul li a * {
+    margin: 0;
+    padding: 0;
+}
+
+.quicklinkheader {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.quicklinks ul li a img {
+    height: 22px;
+    width: 22px;
+    margin: 0 6px 0 2px;
+}
+
+.quicklinks ul li a p {
+    margin-top: 1.2em;
+    text-align: center;
+}
