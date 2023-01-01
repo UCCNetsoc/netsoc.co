@@ -23,7 +23,7 @@
     "@types/react-scroll": "^1.5.5",
     "@types/showdown": "^1.9.3",
     "@types/styled-components": "^5.0.1",
-    "parcel": "^1.12.4",
+    "parcel": "^2.8.2",
     "parcel-plugin-prerender-custom": "^1.4.5",
     "typescript": "^3.8.3"
   },
