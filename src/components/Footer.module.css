@@ -1,0 +1,20 @@
+footer {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer_links {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.footer_links > * {
+    margin: auto 2em;
+}
+
+.footer_links img {
+    width: 3em;
+    height: 3em;
+}
