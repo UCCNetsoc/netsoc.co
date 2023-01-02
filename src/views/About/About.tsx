@@ -31,7 +31,7 @@ const About = () => {
         <p>
           We are always looking for new members, so if you are a UCC student and are interested  in 
           joining, head over to the <a href="https://candsportal.ucc.ie">Clubs & Socs Portal</a> and 
-          become a member. Also make sure to join our{" "}<a href="https://discord.netsoc.co">Discord</a>
+          become a member. Also make sure to join our{" "}<a href="https://discord.netsoc.co">Discord</a>{" "}
           to keep up to date on events and the happenings of the society.
         </p>
       </article>
