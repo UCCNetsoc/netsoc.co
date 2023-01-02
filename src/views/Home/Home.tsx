@@ -82,7 +82,7 @@ const quick_links: { icon?: string, title: string, description: string, url: str
     icon: "https://wiki.netsoc.co/favicon.ico",
     title: "Netsoc Cloud Tutorial",
     description: "Learn how to use our cloud services",
-    url: "https://tutorial.netsoc.cloud"
+    url: "https://wiki.netsoc.co/en/services/tutorial"
   },
   {
     title: "Wiki",
