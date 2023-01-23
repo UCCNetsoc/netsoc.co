@@ -36,6 +36,7 @@ const Footer = (): JSX.Element => {
           <iframe src="https://discord.com/widget?id=248421213628530688&theme=dark" width="350" height="500" allowTransparency={true} 
               frameBorder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" title="Discord">
           </iframe>
+          <img className={styles.logo} src="/img/logo-horizontal.svg" alt="Netsoc" />
       </footer>
     </>
   )
