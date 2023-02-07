@@ -87,21 +87,6 @@
     width: 100%;
 }
 
-
-/* .nav ul li a::after {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: url(../../../public/img/binary-repeat.png);
-    animation: swipe 8s linear infinite;
-    object-fit: fill;
-    content: "";
-    height: 100%;
-    width: 0;
-    transition: width 0.2s ease-in-out;
-} */
-
 @keyframes swipe {
     0% {
         background-position: 0% 50%;
