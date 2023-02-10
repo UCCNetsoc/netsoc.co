@@ -1,6 +1,7 @@
 footer {
     margin: 0 auto;
-    border-top: 1px solid white;
+    box-sizing: border-box;
+    padding: 2em;
 
 }
 
@@ -12,13 +13,14 @@ footer {
     justify-content: space-evenly;
 }
 
-.footer_links > * {
+.footer_links a {
     margin: auto 2em;
+    padding: 1em;
 }
 
 .footer_links img {
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
 }
 
 iframe {
