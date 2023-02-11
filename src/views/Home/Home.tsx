@@ -16,13 +16,13 @@ const Home = () => {
               <Link to="/about" className={styles.btn}>About</Link>
             </li>
             <li>
-              <Link to="/Technology" className={styles.btn}>Technology</Link>
+              <Link to="/technology" className={styles.btn}>Technology</Link>
             </li>
             <li>
-              <Link to="/Gaming" className={styles.btn}>Gaming</Link>
+              <Link to="/gaming" className={styles.btn}>Gaming</Link>
             </li>
             <li>
-              <Link to="/Esports" className={styles.btn}>Esports</Link>
+              <Link to="/esports" className={styles.btn}>Esports</Link>
             </li>
           </ul>
         </nav>
