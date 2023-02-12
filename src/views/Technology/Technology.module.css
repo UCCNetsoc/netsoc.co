@@ -1,0 +1,54 @@
+.article {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+
+.title {
+    font-size: 3.5em;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    padding: 1em 0 .9em 0;
+}
+.main h2, .main p {
+    color: rgb(255, 255, 255);
+    padding-bottom: 2em;
+}
+.bg {
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: url(../../../public/img/binary-repeat.png);
+    filter: invert(1) brightness(0.4);
+    animation: swipe 120s linear infinite;
+}
+
+@keyframes swipe {
+    0% {
+        background-position: 0% 50%;
+        /* filter: invert(1) brightness(0.4); */
+    }
+
+    50% {
+        background-position: 100% 50%;
+        /* filter: invert(1) brightness(0.4); */
+    }
+
+    100% {
+        background-position: 0% 50%;
+        /* filter: invert(1); */
+    }
+}
+
+.main {
+    margin: 0 auto;
+    z-index: 10;
+    background-color: rgba(27, 27, 27, 1);
+    width: 70vw;
+    min-height: -webkit-fill-available;
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
