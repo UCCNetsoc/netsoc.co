@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 
 import bg from "../../../public/img/binary-repeat.png";
+import RecentAnnouncements from "../../components/RecentAnnouncements";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+
   return (
     <>
       <div className={styles.bg}></div>
@@ -28,6 +31,10 @@ const Home = () => {
             </li>
           </ul>
         </nav>
+        <section className={styles.upcomingevents}>
+          <h2>Recent Announcements</h2>
+          <RecentAnnouncements />
+        </section>
         <nav className={styles.quicklinks}>
           <h1 className={styles.title}>Quick Links</h1>
           <ul>
