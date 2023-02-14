@@ -1,5 +1,5 @@
-import { isContentEditable } from "@testing-library/user-event/dist/utils";
 import { useState, useEffect } from "react";
+import ReactMarkdown from 'react-markdown';
 
 const RecentAnnouncements = (): JSX.Element => {
     const [data, setData] = useState<AnnouncementProps[] | null>(null);
@@ -105,7 +105,7 @@ const Announcement = ({content, date, image_url}: AnnouncementProps): JSX.Elemen
     return (
         <article>
             <h2>{date}</h2>
-            <p>{content}</p>
+            <ReactMarkdown>{ content }</ReactMarkdown>
             <img src={image_url} alt=""/>
         </article>
     )
