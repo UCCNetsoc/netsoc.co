@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Converter } from "showdown";
-import "./RecentAnnouncements.module.css";
+// import "./RecentAnnouncements.module.css";
+import styles from "./RecentAnnouncements.module.css";
 
 const converter = new Converter({
     simplifiedAutoLink: true,
@@ -144,10 +145,10 @@ type AnnouncementProps = {
 
 const Announcement = ({content, date, image_url}: AnnouncementProps): JSX.Element => {
     return (
-        <article>
+        <article className={styles.announcement}>
             <h2>{date}</h2>
             <p dangerouslySetInnerHTML={{ __html: content }}></p>
-            // do not render image if none was provided
+            {/* do not render image if none was provided */}
             { (!!image_url) ? <img src={image_url} alt="" /> : <></>}
         </article>
     )
