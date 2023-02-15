@@ -15,7 +15,7 @@
     background-color: white;
     width: 70vw;
     max-width: 1200px;
-    user-select: none;
+    /* user-select: none; */
     box-shadow: -15px 0 15px 5px rgba(0, 0, 0, 0.1), 15px 0 15px 5px rgba(0, 0, 0, 0.1);
 }
 

@@ -1,0 +1,13 @@
+i {
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}

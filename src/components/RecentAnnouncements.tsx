@@ -1,5 +1,40 @@
 import { useState, useEffect } from "react";
-import ReactMarkdown from 'react-markdown';
+import { Converter } from "showdown";
+import "./RecentAnnouncements.module.css";
+
+const converter = new Converter({
+    simplifiedAutoLink: true,
+    simpleLineBreaks: true,
+    underline: true,
+});
+
+const replacer = (message: string): [string, boolean] => {
+    // regex for static and animated emojis
+    const emojis = message.match(/<:[^:]*:([^>]*)>/);
+    const emojisA = message.match(/<a:[^:]*:([^>]*)>/);
+    // replace with emoji url
+    const elem = (s: string) =>
+        `<i class="emoji" style="background-image: url(${s});"></i>`;
+    if (emojis) {
+        return [
+            message.replace(
+                emojis[0],
+                elem(`https://cdn.discordapp.com/emojis/${emojis[1]}.png`)
+            ),
+            true
+        ]
+    } else if (emojisA) {
+        return [
+            message.replace(
+                emojisA[0],
+                elem(`https://cdn.discordapp.com/emojis/${emojisA[1]}.gif`)
+            ),
+            true
+        ]
+    }
+    // return false if message not changed
+    return [message, false];
+}
 
 const RecentAnnouncements = (): JSX.Element => {
     const [data, setData] = useState<AnnouncementProps[] | null>(null);
@@ -22,9 +57,15 @@ const RecentAnnouncements = (): JSX.Element => {
           })
           .then((data: AnnouncementJSON[]) => {
             let formattedData: AnnouncementProps[] = data.map((d: AnnouncementJSON): AnnouncementProps => {
+                let str: string = d.content;
+                let changed: boolean = true;
+                while (changed) {
+                  [str, changed] = replacer(str);
+                }
+                str = converter.makeHtml(str)
                 const announcementDate: Date = new Date(d.date * 1000);
                 return {
-                    content: d.content,
+                    content: str,
                     image_url: d.image_url,
                     date: announcementDate.toDateString(),
                     key: d.date,
@@ -105,8 +146,9 @@ const Announcement = ({content, date, image_url}: AnnouncementProps): JSX.Elemen
     return (
         <article>
             <h2>{date}</h2>
-            <ReactMarkdown>{ content }</ReactMarkdown>
-            <img src={image_url} alt=""/>
+            <p dangerouslySetInnerHTML={{ __html: content }}></p>
+            // do not render image if none was provided
+            { (!!image_url) ? <img src={image_url} alt="" /> : <></>}
         </article>
     )
 }
