@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 
-import bg from "../../../public/img/binary-repeat.png";
-
 const Home = () => {
   return (
     <>
@@ -18,13 +16,13 @@ const Home = () => {
               <Link to="/about" className={styles.btn}>About</Link>
             </li>
             <li>
-              <Link to="/about" className={styles.btn}>Technology</Link>
+              <Link to="/technology" className={styles.btn}>Technology</Link>
             </li>
             <li>
-              <Link to="/about" className={styles.btn}>Gaming</Link>
+              <Link to="/gaming" className={styles.btn}>Gaming</Link>
             </li>
             <li>
-              <Link to="/about" className={styles.btn}>Esports</Link>
+              <Link to="/esports" className={styles.btn}>Esports</Link>
             </li>
           </ul>
         </nav>
@@ -33,7 +31,7 @@ const Home = () => {
           <ul>
             {quick_links.map((link) => (
               <li key={link.title}>
-                <a href={link.url}>
+                <a href={link.url} target="_blank">
                   <div className={styles.quicklinkheader}>
                     <img src={link.icon ? link.icon : `https://${new URL(link.url).hostname}/favicon.ico`} alt={link.title} />
                     <h1>{link.title}</h1>
@@ -76,17 +74,17 @@ const quick_links: { icon?: string, title: string, description: string, url: str
   {
     icon: "https://www.ucc.ie/en/media/support/societies/uccsocs/DDB3B04A-03E1-4EB0-891C-7DE966A71E81.jpeg",
     title: "Join the Society",
-    description: "Go to \"My Memberships\" and click \"Add New\" to join the society",
+    description: 'Go to "My Memberships" and click "Add New" to join the society',
     url: "https://candsportal.ucc.ie"
   },
   {
     title: "Netsoc Cloud",
-    description: "Free access our cloud services for students",
+    description: "Free student access to our cloud services",
     url: "https://netsoc.cloud"
   },
   {
     icon: "https://wiki.netsoc.co/favicon.ico",
-    title: "Netsoc Cloud Tutorial",
+    title: "Netsoc Cloud Wiki",
     description: "Learn how to use our cloud services",
     url: "https://wiki.netsoc.co/en/services/tutorial"
   },
@@ -104,7 +102,7 @@ const quick_links: { icon?: string, title: string, description: string, url: str
   {
     icon: "https://handbook.netsoc.co/favicon.png",
     title: "SysAdmin Handbook",
-    description: "Learn about Netsoc's infrasturcture",
+    description: "Learn about Netsoc's infrastructure",
     url: "https://handbook.netsoc.co"
   },
 ]

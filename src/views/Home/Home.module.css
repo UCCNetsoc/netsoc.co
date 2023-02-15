@@ -1,7 +1,7 @@
 .bg {
     z-index: -1;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
     background: url(../../../public/img/binary-repeat.png);
     filter: invert(1) brightness(0.4);
@@ -9,19 +9,19 @@
 }
 
 .main {
-    /* margin: 1em auto 0 auto; */
-    margin: auto;
+    margin: 0 auto;
     z-index: 10;
-    background-color: white;
+    background-color: rgba(27, 27, 27, 1);
     width: 70vw;
     max-width: 1200px;
     user-select: none;
-    box-shadow: -15px 0 15px 5px rgba(0, 0, 0, 0.1), 15px 0 15px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+     rgba(0, 0, 0, 0.12) 0px 4px 6px,
+     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .jumbo {
     user-select: text;
-    height: 37vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,19 +30,22 @@
 
 .title {
     font-size: 3.5em;
-    margin-bottom: 0;
+    margin-bottom: .5em;
+
 }
 
 .title,
 .subtitle {
     font-weight: 300;
     text-align: center;
+    color: white;
 }
-
+.subtitle {
+    width: 70%;
+}
 .nav {
-    height: 63vh;
+    margin-top: 3em;
 }
-
 .nav ul {
     padding-left: 0 !important;
     text-align: center;
@@ -58,7 +61,7 @@
 
 .nav ul li {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
     position: relative;
     padding: 0.42em 0;
 }
@@ -69,22 +72,16 @@
     font-size: 2.75rem;
     font-weight: 300;
     text-decoration: none;
-    color: #111;
+    color: rgba(255, 255, 255, 1);
     width: 100%;
+    transition: all .3s
+  
 }
 
-.nav ul li a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 4px;
-    background: #000;
-    opacity: 87%;
-    transition: width 0.18s;
-}
 
-.nav ul li a:hover::after {
-    width: 100%;
+.nav ul li a:hover {
+    box-shadow: inset 0 -3px 0 0 rgb(0, 161, 11);
+    padding-bottom: 6px;
 }
 
 @keyframes swipe {
@@ -104,29 +101,10 @@
     }
 }
 
-.nav ul li a:hover::after {
-    width: 100%;
-}
-
-.nav ul li a:hover {
-    color: #000;
-}
-
-.quicklinks {
-    width: 100%;
-    margin: 2rem auto 0 auto;
-}
-
 @media screen and (max-width: 1000px) {
     .quicklinks {
         width: 100%;
     }
-}
-
-.quicklinks .title {
-    margin: auto;
-    text-align: center;
-    margin-bottom: 1em;
 }
 
 .quicklinks ul {
@@ -139,13 +117,13 @@
 }
 
 .quicklinks ul li {
-    width: 320px;
-    height: 90px;
-    padding: 12px;
-    border: 1px solid #fff2;
+    width: 330px;
+    height: 130px;
+    border: 2px solid rgba(0,0,0, .9);
     border-radius: 5px;
-    margin: 16px 10px;
+    margin: 23px 30px;
     transition: all 0.11s ease-in-out;
+    background-color: rgba(255, 255, 255, .9);
 }
 
 .quicklinks ul li:hover {
@@ -153,35 +131,31 @@
 }
 
 .quicklinks ul li a {
-    height: 100%;
-    width: 100%;
-    color: unset;
     text-decoration: none;
-    display: flex;
-    flex-direction: column;
 }
 
 .quicklinks ul li a * {
-    margin: 0;
-    padding: 0;
+    margin: 0.5em;
 }
 
 .quicklinkheader {
     display: flex;
-    align-items: baseline;
-    justify-content: flex-start;
+    align-items: center;
 }
 
 .quicklinks ul li a img {
-    height: 22px;
-    width: 22px;
+    height: 25px;
+    width: 25px;
     margin: 0 6px 0 2px;
-    background-color: #444;
+    background: #444;
     padding: 8px;
     border-radius: 8%;
 }
 
 .quicklinks ul li a p {
-    margin-top: 1.2em;
     text-align: center;
 }
+
+
+
+
