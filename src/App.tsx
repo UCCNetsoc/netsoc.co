@@ -6,6 +6,7 @@ import Home from './views/Home/Home';
 import Gaming from './views/Gaming/Gaming';
 import Esports from './views/Esports/Esports';
 import Technology from './views/Technology/Technology';
+import Footer from './components/Footer';
 
 function App() {
   return (
