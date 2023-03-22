@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import About from './views/About/About';
+import Header from './components/Header';
+import Home from './views/Home/Home';
+import Gaming from './views/Gaming/Gaming';
+import Esports from './views/Esports/Esports';
+import Technology from './views/Technology/Technology';
 import Footer from './components/Footer';
-
-import Home from './views/Home/Home';   // app won't run unless i add an extra /Home ¯\_(ツ)_/¯
-import About from './views/Home/About';
-import Gaming from './views/Home/Gaming';
-import Technology from './views/Home/Technology';
-
 function App() {
   return (
     <>

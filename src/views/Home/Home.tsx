@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SponsorSection from "../../components/SponsorSection";
 import styles from "./Home.module.css";
+
 const Home = () => {
   return (
     <main style={{ userSelect: "none" }}>
@@ -48,7 +49,7 @@ const quick_links: { icon?: string, title: string, description: string, url: str
     title: "Discord",
     description: "Join our Discord server to chat with other members",
     url: "https://discord.netsoc.co"
-  }, 
+  },
   {
     icon: "/img/google_calendar.png",
     title: "Events Calendar",
@@ -69,17 +70,17 @@ const quick_links: { icon?: string, title: string, description: string, url: str
   {
     icon: "https://www.ucc.ie/en/media/support/societies/uccsocs/DDB3B04A-03E1-4EB0-891C-7DE966A71E81.jpeg",
     title: "Join the Society",
-    description: "Go to \"My Memberships\" and click \"Add New\" to join the society",
+    description: 'Go to "My Memberships" and click "Add New" to join the society',
     url: "https://candsportal.ucc.ie"
   },
   {
     title: "Netsoc Cloud",
-    description: "Free access our cloud services for students",
+    description: "Free student access to our cloud services",
     url: "https://netsoc.cloud"
   },
   {
     icon: "https://wiki.netsoc.co/favicon.ico",
-    title: "Netsoc Cloud Tutorial",
+    title: "Netsoc Cloud Wiki",
     description: "Learn how to use our cloud services",
     url: "https://tutorial.netsoc.co"
   },
@@ -97,7 +98,7 @@ const quick_links: { icon?: string, title: string, description: string, url: str
   {
     icon: "https://handbook.netsoc.co/favicon.png",
     title: "SysAdmin Handbook",
-    description: "Learn about Netsoc's infrasturcture",
+    description: "Learn about Netsoc's infrastructure",
     url: "https://handbook.netsoc.co"
   },
 ]

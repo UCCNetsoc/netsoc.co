@@ -1,0 +1,71 @@
+.bg {
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: url(../../../public/img/binary-repeat.png);
+    filter: invert(1) brightness(0.4);
+    animation: swipe 120s linear infinite;
+}
+
+.main {
+    margin: 0 auto;
+    z-index: 10;
+    background-color: rgba(27, 27, 27, 1);
+    width: 70vw;
+    min-height: -webkit-fill-available;
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.article {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.article a {
+    color: #276ab6;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.title {
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+    text-align: center;
+    padding: .5em 0;
+}
+
+.article p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-bottom: 1.75em;
+}
+
+.article a:hover {
+    box-shadow: inset 0 -3px 0 0 rgb(0, 161, 11);
+    padding-bottom: 6px;
+}
+
+@keyframes swipe {
+    0% {
+        background-position: 0% 50%;
+        /* filter: invert(1) brightness(0.4); */
+    }
+
+    50% {
+        background-position: 100% 50%;
+        /* filter: invert(1) brightness(0.4); */
+    }
+
+    100% {
+        background-position: 0% 50%;
+        /* filter: invert(1); */
+    }
+}
