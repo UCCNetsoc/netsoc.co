@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SponsorSection from "../../components/SponsorSection";
 import styles from "./Home.module.css";
 const Home = () => {
   return (
@@ -13,22 +14,19 @@ const Home = () => {
             <Link to="/about" className={styles.btn}>About</Link>
           </li>
           <li>
-            <Link to="/about" className={styles.btn}>Technology</Link>
+            <Link to="/tech" className={styles.btn}>Technology</Link>
           </li>
           <li>
-            <Link to="/about" className={styles.btn}>Gaming</Link>
-          </li>
-          <li>
-            <Link to="/about" className={styles.btn}>Esports</Link>
+            <Link to="/gaming" className={styles.btn}>Gaming</Link>
           </li>
         </ul>
       </nav>
       <nav className={styles.quicklinks}>
-        <h1 className={styles.title}>Quick Links</h1>
+        <h1 className={styles.subtitle}>Quick Links</h1>
         <ul>
           {quick_links.map((link) => (
             <li key={link.title}>
-              <a href={link.url}>
+              <a target="_blank" href={link.url}>
                 <div className={styles.quicklinkheader}>
                   <img src={link.icon ? link.icon : `https://${new URL(link.url).hostname}/favicon.ico`} alt={link.title} />
                   <h1>{link.title}</h1>
@@ -39,6 +37,7 @@ const Home = () => {
           ))}
         </ul>
       </nav>
+      <SponsorSection />
     </main>
   )
 }
@@ -54,7 +53,7 @@ const quick_links: { icon?: string, title: string, description: string, url: str
     icon: "/img/google_calendar.png",
     title: "Events Calendar",
     description: "See what events we have coming up",
-    url: "https://google.com"
+    url: "http://netsoc.co/go/calendar"
   },
   {
     title: "Instagram",
@@ -82,7 +81,7 @@ const quick_links: { icon?: string, title: string, description: string, url: str
     icon: "https://wiki.netsoc.co/favicon.ico",
     title: "Netsoc Cloud Tutorial",
     description: "Learn how to use our cloud services",
-    url: "https://tutorial.netsoc.cloud"
+    url: "https://tutorial.netsoc.co"
   },
   {
     title: "Wiki",

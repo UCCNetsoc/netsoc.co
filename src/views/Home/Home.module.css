@@ -17,6 +17,17 @@
     text-align: center;
 }
 
+.section {
+    width: 98%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.p {
+    margin: 30px auto;
+}
+
 .nav {
     height: 30vh;
 }
@@ -26,6 +37,7 @@
     text-align: center;
     height: 100%;
     width: 180px;
+    /* width: 80px; */
     margin: auto;
     list-style-type: none;
     display: flex;
@@ -43,7 +55,7 @@
     width: 100%;
     font-size: 2rem;
     text-decoration: none;
-    color: #fffc;
+    color: #fff;
     width: 100%;
 }
 
