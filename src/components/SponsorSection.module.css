@@ -1,0 +1,53 @@
+@keyframes shine {
+    100% {
+        left: 105%;
+    }
+}
+
+.title {
+
+    font-weight: 300;
+    font-size: 3.5em;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.sponsorContainer {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 14px auto 24px auto;
+    width: 320px;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sponsorImg {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    object-fit: cover;
+    padding: 10px 20px;
+    border-radius: 3px;
+    filter: saturate(0%);
+}
+
+.sponsorContainer::before {
+    background: linear-gradient(to right, #fff3 0%, #fff9 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: -75%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-25deg);
+    width: 60%;
+    z-index: 30;
+}
+
+.sponsorContainer:hover::before {
+    animation: shine 0.3s linear;
+}

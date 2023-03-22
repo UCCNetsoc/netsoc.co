@@ -43,6 +43,13 @@
 .subtitle {
     width: 70%;
 }
+
+.section {
+    width: 98%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
 .nav {
     margin-top: 3em;
 }
@@ -50,7 +57,7 @@
     padding-left: 0 !important;
     text-align: center;
     height: 100%;
-    width: 280px;
+    width: 180px;
     margin: auto;
     list-style-type: none;
     display: flex;
@@ -72,7 +79,7 @@
     font-size: 2.75rem;
     font-weight: 300;
     text-decoration: none;
-    color: rgba(255, 255, 255, 1);
+    color: #fff;
     width: 100%;
     transition: all .3s
   
